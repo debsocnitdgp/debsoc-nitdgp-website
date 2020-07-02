@@ -1,0 +1,35 @@
+{% extends "sitewebapp/base.html" %} {% block content %}
+<div style="margin: 10px; text-align: center;">
+  <img
+    src="{{eventsingular.poster.url}}"
+    alt="..."
+    style="
+      margin: 0 auto;
+      height: auto;
+      max-width: 1100px;
+      width: 95%;
+      border-radius: 8px;
+      box-shadow: 6px 6px 9px #000;
+    "
+  />
+</div>
+<div style="margin: 20px;">
+  <div
+    class="card"
+    style="
+      text-align: center;
+      margin: 20px auto;
+      max-width: 1100px;
+      border-radius: 8px;
+      box-shadow: 6px 6px 9px #000;
+    "
+  >
+    <div class="card-body" style="text-align: center; margin: 0 auto;">
+      <h3 class="card-title">{{eventsingular.event_name}}</h3>
+
+      <p>{{eventsingular.event_description}}</p>
+    </div>
+  </div>
+</div>
+
+{%endblock%}

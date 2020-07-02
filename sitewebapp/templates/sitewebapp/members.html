@@ -1,0 +1,61 @@
+{% extends "sitewebapp/base.html" %} {% block content %}
+<div class="container">
+  <div class="headbox">
+    <h1 class="heading">Our Team</h1>
+  </div>
+  <div style="padding: 7px;">
+    <div style="color: #fff;">
+      <div style="margin: 10px auto; max-width: 1100px; text-align: center;">
+        <p>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content. Some quick example text to build on the
+          card title and make up the bulk of the card's content. Some quick
+          example text to build on the card title and make up the bulk of the
+          card's content. Some quick example text to build on the card title and
+          make up the bulk of the card's content.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    {% for i in members4 %}
+    <div class="col-md">
+      <div class="our-team" style="width: 250px; margin: 20px auto;">
+        <div class="picture">
+          {% if i.dp %}
+          <img class="img-fluid" src="{{ i.dp.url }}" />
+          {% endif %}
+        </div>
+        <div class="team-content">
+          <h3 class="name">{{i.firstname}}</h3>
+          <h4 class="title">{{i.post}}</h4>
+        </div>
+        <ul class="social">
+          <li>
+            <a
+              href="{{i.facebook_url}}"
+              class="fa fa-facebook"
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="{{i.twitter_url}}"
+              class="fa fa-twitter"
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="{{i.linkedin_url}}"
+              class="fa fa-linkedin"
+              aria-hidden="true"
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{%endblock%}

@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DebsocNITDGP</title>
+    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" /-->
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/profile_card.css' %}" />
+    <style>
+      .card {
+        background-color: #fb4454;
+        color: #fff;
+      }
+      .headbox {
+        width: 300px;
+        margin: 10px auto;
+        margin-top: 50px;
+        padding: 5px;
+        border-top: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+      }
+      .heading {
+        text-transform: uppercase;
+        font-size: 30px;
+        text-align: center;
+        color: #fff;
+      }
+    </style>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Bootstrap -->
+    <!-- <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+      rel="stylesheet"
+    /> -->
+    <!-- Material Design for Bootstrap -->
+    <!-- <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.16/css/mdb.min.css"
+      rel="stylesheet"
+    /> -->
+  </head>
+
+  <body style="background-color: #151424;">
+    <!--Navbar-->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark sticky-top"
+      style="background-color: #fb4454; box-shadow: 0px 6px 9px #000;"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">The Debating Society</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarColor02"
+          aria-controls="navbarColor02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor02">
+          <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="{% url 'index' %}"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'event_home' %}">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'blog_home' %}">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'members' %}">Team</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--Navbar Ended-->
+
+    {% block content %}
+    <!-- Content Goes here -->
+    {% endblock content %}
+
+    <footer class="text-white" style="background-color: #fb4454;">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Footer Content</h5>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
+              atque ea quis molestias. Fugiat pariatur maxime quis culpa
+              corporis vitae repudiandae aliquam voluptatem veniam, est atque
+              cumque eum delectus sint!
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-white">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-white">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div
+        class="text-center p-3"
+        style="
+          background-color: rgba(0, 0, 0, 0.2);
+          color: rgba(255, 255, 255, 0.6);
+        "
+      >
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/"> DebsocNITDGP</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+    <!-- jQuery -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+    <!-- Popper.js -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script> -->
+
+    <!-- Bootstrap -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script> -->
+
+    <!-- Material Design for Bootstrap -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.16/js/mdb.min.js"></script> -->
+    <!-- <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script> -->
+    <!-- <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script -->
+    <script src="{% static 'js/mdb.min.js' %}"></script>
+  </body>
+</html>

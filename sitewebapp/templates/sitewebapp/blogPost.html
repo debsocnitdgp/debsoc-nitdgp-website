@@ -1,0 +1,86 @@
+{% extends "sitewebapp/base.html" %} {% block content %}
+<div style="margin: 10px; text-align: center;">
+  <img
+    src="{{post.image_url}}"
+    alt="..."
+    style="
+      margin: 0 auto;
+      height: auto;
+      max-width: 500px;
+      width: 95%;
+      border-radius: 8px;
+      box-shadow: 6px 6px 9px #000;
+    "
+  />
+</div>
+<div style="margin: 20px;">
+  <div
+    class="card"
+    style="
+      text-align: center;
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 8px;
+      box-shadow: 6px 6px 9px #000;
+    "
+  >
+    <div class="card-body" style="text-align: center; margin: 0 auto;">
+      <h3 class="card-title">{{post.title}}</h3>
+
+      <p>{{post.blog_text}}</p>
+    </div>
+  </div>
+</div>
+<div class="headbox" style="border-top: none;">
+  <h3 class="heading" style="font-size: 20px;">Leave a comment</h3>
+</div>
+<form
+  class="comment_form"
+  method="post"
+  style="max-width: 500px; text-align: center; margin: 20px auto;"
+>
+  {% csrf_token %}
+  <div class="form-outline" style="margin: 10px;">
+    <input name="comment_by" type="text" class="form-control" id="com_name" />
+    <label for="com_name" class="form-label" style="color: #fff;">Name</label>
+  </div>
+
+  <div class="form-outline mb-3" style="margin: 10px;">
+    <input name="comment" type="text" class="form-control" id="com" />
+    <label for="com" class="form-label" style="color: #fff;">Comment</label>
+  </div>
+
+  <button type="submit" class="btn btn-outline-light btn-rounded">
+    Submit
+  </button>
+</form>
+<div class="headbox" style="border-top: none;">
+  <h3 class="heading" style="font-size: 20px;">All comments</h3>
+</div>
+{% for comment in post.comments.all %}
+<div style="margin: 20px;">
+  <div
+    class="card"
+    style="
+      text-align: center;
+      margin: 20px auto;
+      max-width: 800px;
+      background-color: #eee;
+      border-bottom: 11px solid #fb4454;
+      box-shadow: 6px 6px 9px #000;
+      border-radius: 8px;
+    "
+  >
+    <div
+      class="card-body"
+      style="text-align: center; margin: 0 auto; padding: 3px; color: #151424;"
+    >
+      <p style="font-size: 15px;">
+        <b> {{comment.comment_by}}</b>
+      </p>
+      <p style="font-size: 16px; margin: 2px;">{{comment.comment}}</p>
+      <p style="font-size: 12px; margin: 2px;">{{comment.commented_on}}</p>
+    </div>
+  </div>
+</div>
+{% endfor %} {%endblock%}

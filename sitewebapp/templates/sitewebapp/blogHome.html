@@ -1,0 +1,47 @@
+{% extends "sitewebapp/base.html" %} {% block content %}
+<div class="text-center">
+  <div class="headbox">
+    <h1 class="heading">Our Blog</h1>
+  </div>
+  <div style="padding: 7px;">
+    <div style="color: #fff;">
+      <div style="margin: 10px auto; max-width: 1100px; text-align: center;">
+        <p>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content. Some quick example text to build on the
+          card title and make up the bulk of the card's content. Some quick
+          example text to build on the card title and make up the bulk of the
+          card's content. Some quick example text to build on the card title and
+          make up the bulk of the card's content.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    {% for i in blogs %}
+
+    <div class="col-md">
+      <div class="card" style="width: 350px; margin: 20px auto;">
+        {% if i.image_url %}
+        <img src="{{i.image_url}}" class="card-img-top" alt="..." />
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{i.title}}</h5>
+
+          <p>{{i.created_on}}</p>
+          <p>{{i.author}}</p>
+          <a
+            href="{% url 'blog_view' i.id %}"
+            class="btn btn-outline-white btn-rounded"
+            style="color: #fff;"
+            >Explore</a
+          >
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+
+{%endblock%}
