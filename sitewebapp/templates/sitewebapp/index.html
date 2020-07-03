@@ -10,7 +10,7 @@
       max-width: 1100px;
       box-shadow: 2px 2px 4px #000;
       border-radius: 8px;
-      background-color: #fb4454;
+      background-color: #008080;
     "
   >
     <!-- Indicators -->
@@ -94,12 +94,17 @@
 
 <div style="margin: 0;">
   <div class="row">
-    <div class="card" style="background-color: #fb4454; color: #fff;">
+    <div class="card" style="background-color: #008080; color: #fff;">
       <div
         class="card-body"
         style="margin: 10px auto; max-width: 1100px; text-align: center;"
+        data-toggle="animation"
+        data-animateonscroll="repeat"
+        data-animation="fadeInLeft"
+        class="fa-1x slow"
       >
-        <h5 class="card-title">About us</h5>
+        <h5 class="card-title" >About us</h5>
+
         <p class="card-text">
           Some quick example text to build on the card title and make up the
           bulk of the card's content. Some quick example text to build on the
@@ -122,7 +127,10 @@
   <div style="padding: 7px;">
     <div style="color: #fff;">
       <div style="margin: 10px auto; max-width: 1100px; text-align: center;">
-        <p>
+        <p data-toggle="animation"
+        data-animateonscroll="repeat"
+        data-animation="fadeInRight"
+        class="fa-1x slow">
           Some quick example text to build on the card title and make up the
           bulk of the card's content. Some quick example text to build on the
           card title and make up the bulk of the card's content. Some quick
@@ -146,6 +154,10 @@
           box-shadow: 3px 3px 4px #000;
           border-radius: 8px;
         "
+        data-toggle="animation"
+        data-animateonscroll="repeat"
+        data-animation="fadeInUp"
+        class="fa-1x slow"
       >
         {% if i.poster %}
         <img src="{{ i.poster.url }}" class="card-img-top" alt="..." />
@@ -172,10 +184,14 @@
 </div>
 <div style="margin: 0;">
   <div class="row">
-    <div class="card" style="background-color: #fb4454; color: #fff;">
+    <div class="card" style="background-color: #008080; color: #fff;">
       <div
         class="card-body"
         style="margin: 10px auto; max-width: 1100px; text-align: center;"
+        data-toggle="animation"
+        data-animateonscroll="repeat"
+        data-animation="fadeInLeft"
+        class="fa-1x slow"
       >
         <h5 class="card-title">Our Blog</h5>
         <p class="card-text">
@@ -226,7 +242,11 @@
     </div>
     <div style="padding: 7px;">
       <div style="color: #fff;">
-        <div style="margin: 10px auto; max-width: 1100px; text-align: center;">
+        <div style="margin: 10px auto; max-width: 1100px; text-align: center;"
+        data-toggle="animation"
+        data-animateonscroll="repeat"
+        data-animation="fadeInRight"
+        class="fa-1x slow">
           <p>
             Some quick example text to build on the card title and make up the
             bulk of the card's content. Some quick example text to build on the
@@ -241,7 +261,11 @@
     <div class="row">
       {% for i in membersI %}
       <div class="col-md">
-        <div class="our-team" style="width: 250px; margin: 20px auto;">
+        <div class="our-team" style="width: 250px; margin: 20px auto;"
+        data-toggle="animation"
+        data-animateonscroll="repeat"
+        data-animation="slideInUp"
+        class="fa-1x slow">
           <div class="picture">
             {% if i.dp %}
             <img class="img-fluid" src="{{ i.dp.url }}" />
