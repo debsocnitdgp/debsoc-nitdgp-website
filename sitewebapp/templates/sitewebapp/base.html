@@ -202,18 +202,24 @@
     <!-- <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script> -->
     <!-- <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script -->
     <script src="{% static 'js/mdb.min.js' %}"></script>
-    <script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
       // $(document).ready(function(){
       // 	$('div#loading').removeAttr('id');
       // });
-      var preloader = document.getElementById("loading");
+      //var preloader = document.getElementById("loading");
       // window.addEventListener('load', function(){
       // 	preloader.style.display = 'none';
       // 	})
 
-      function myFunction() {
-        preloader.style.display = "none";
-      }
+      // function myFunction() {
+      //   preloader.style.display = "none";
+      // }
+      $(window).load(function () {
+        setTimeout(function () {
+          $("#loading").fadeOut("slow");
+        }, 1200);
+      });
     </script>
   </body>
 </html>
