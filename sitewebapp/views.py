@@ -9,7 +9,7 @@ from django.views.decorators.cache import cache_control, never_cache
 
 @never_cache
 def about(request):
-    return HttpResponse("fuckofff nothing here")
+    return render(request, 'sitewebapp/about.html')
 
 
 @never_cache

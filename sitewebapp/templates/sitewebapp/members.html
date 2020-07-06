@@ -3,7 +3,13 @@
   <div class="headbox">
     <h1 class="heading">Our Team</h1>
   </div>
-  <div style="padding: 7px;">
+  <div
+    style="padding: 7px;"
+    data-toggle="animation"
+    data-animateonscroll="repeat"
+    data-animation="zoomIn"
+    class="fa-1x slow"
+  >
     <div style="color: #fff;">
       <div style="margin: 10px auto; max-width: 1100px; text-align: center;">
         <p>
@@ -20,7 +26,14 @@
   <div class="row">
     {% for i in members4 %}
     <div class="col-md">
-      <div class="our-team" style="width: 250px; margin: 20px auto;">
+      <div
+        class="our-team"
+        style="width: 250px; margin: 20px auto;"
+        data-toggle="animation"
+        data-animateonscroll="repeat"
+        data-animation="zoomIn"
+        class="fa-1x slow"
+      >
         <div class="picture">
           {% if i.dp %}
           <img class="img-fluid" src="{{ i.dp.url }}" />

@@ -1,16 +1,18 @@
 {% extends "sitewebapp/base.html" %} {% block content %}
-<div class="row" style="margin: 9px;">
+<div class="row" style="margin: 0px;">
   <!-- Carousel wrapper -->
   <div
     id="carouselExampleCaptions"
     class="carousel slide carousel-fade"
     data-ride="carousel"
     style="
-      margin: 20px auto;
+      margin: 0px auto;
+      margin-top: 20px;
+      padding-top: 13px;
       max-width: 1100px;
       box-shadow: 2px 2px 4px #000;
-      border-radius: 8px;
-      background-color: #008080;
+      border-radius: 0px;
+      background-color: #007180;
     "
   >
     <!-- Indicators -->
@@ -94,7 +96,7 @@
 
 <div style="margin: 0;">
   <div class="row">
-    <div class="card" style="background-color: #008080; color: #fff;">
+    <div class="card" style="background-color: #007180; color: #fff;">
       <div
         class="card-body"
         style="margin: 10px auto; max-width: 1100px; text-align: center;"
@@ -113,9 +115,9 @@
           card's content. Some quick example text to build on the card title and
           make up the bulk of the card's content.
         </p>
-        <button type="button" class="btn btn-light btn-rounded">
+        <a type="button" class="btn btn-light btn-rounded" href="{% url 'about' %}">
           Know more
-        </button>
+        </a>
       </div>
     </div>
   </div>
@@ -184,7 +186,7 @@
 </div>
 <div style="margin: 0;">
   <div class="row">
-    <div class="card" style="background-color: #008080; color: #fff;">
+    <div class="card" style="background-color: #007180; color: #fff;">
       <div
         class="card-body"
         style="margin: 10px auto; max-width: 1100px; text-align: center;"
@@ -264,7 +266,7 @@
         <div class="our-team" style="width: 250px; margin: 20px auto;"
         data-toggle="animation"
         data-animateonscroll="repeat"
-        data-animation="slideInUp"
+        data-animation="zoomIn"
         class="fa-1x slow">
           <div class="picture">
             {% if i.dp %}

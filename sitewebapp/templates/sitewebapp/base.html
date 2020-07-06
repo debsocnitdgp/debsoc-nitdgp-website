@@ -5,7 +5,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no" />
-    <title>DebsocNITDGP</title>
+    <title>Debsocnitdgp</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis:wght@500&family=Quicksand:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="{% static 'debsoclogo.png' %}" />
     <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" /-->
     <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/profile_card.css' %}" />
@@ -16,13 +21,14 @@
         height: 100%;
         width: 100%;
         overflow-x: hidden;
+        font-family: "Quicksand", sans-serif;
       }
       body::-webkit-scrollbar {
         display: none;
       }
 
       .card {
-        background-color: #008080;
+        background-color: #007180;
         color: #fff;
       }
       .headbox {
@@ -35,9 +41,21 @@
       }
       .heading {
         text-transform: uppercase;
-        font-size: 30px;
+        font-family: "Bebas Neue", cursive;
+        font-size: 32px;
         text-align: center;
         color: #fff;
+      }
+      .navbar-brand {
+        margin: 0px;
+        padding: 0px;
+        font-size: 26px;
+        font-family: "Bebas Neue", cursive;
+        color: #fff;
+      }
+      .navbar-toggler {
+        margin-right: 0;
+        padding: 0;
       }
     </style>
 
@@ -60,19 +78,30 @@
 
   <body style="background-color: #000;" onload="myFunction()">
     <div id="loading">
-      <img class="img-fluid" src="{% static 'debsoclogo.png' %}" />
-      <h2 style="text-transform: uppercase; margin-top: 20px;">
-        <i>"To think, is to differ!"</i>
-      </h2>
-      <h3 style="margin-top: 40px;"><b>Loading...</b></h3>
+      <img class="img-fluid" src="{% static 'dsgif.gif' %}" />
     </div>
     <!--Navbar-->
     <nav
       class="navbar navbar-expand-lg navbar-dark sticky-top"
-      style="background-color: #008080; box-shadow: 0px 6px 9px #000;"
+      style="
+        background-color: #007180;
+        box-shadow: 0px 6px 9px #000;
+        text-align: center;
+      "
     >
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">The Debating Society</a>
+        <img
+          class="img-fluid"
+          style="width: 27px;"
+          src="{% static 'DEBSOClogowhitePNG.png' %}"
+        />
+        <h2
+          style="text-align: center;"
+          class="navbar-brand"
+          style="font-family: 'Bebas Neue', cursive;"
+        >
+          &nbsp;&nbsp;&nbsp;&nbsp;The Debating Society&nbsp;&nbsp;&nbsp;&nbsp;
+        </h2>
         <button
           class="navbar-toggler"
           type="button"
@@ -85,7 +114,10 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarColor02">
-          <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+          <ul
+            class="navbar-nav mr-auto mb-2 mb-lg-0"
+            style="text-align: center;"
+          >
             <li class="nav-item active">
               <a class="nav-link" aria-current="page" href="{% url 'index' %}"
                 >Home</a
@@ -100,6 +132,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'members' %}">Team</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -110,7 +145,7 @@
     <!-- Content Goes here -->
     {% endblock content %}
 
-    <footer class="text-white" style="background-color: #008080;">
+    <footer class="text-white" style="background-color: #007180;">
       <!-- Grid container -->
       <div class="container p-4">
         <!--Grid row-->
@@ -183,7 +218,7 @@
         "
       >
         © 2020 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/"> DebsocNITDGP</a>
+        <a class="text-white" href="https://mdbootstrap.com/"> Debsocnitdgp</a>
       </div>
       <!-- Copyright -->
     </footer>

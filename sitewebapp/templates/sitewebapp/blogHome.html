@@ -3,7 +3,13 @@
   <div class="headbox">
     <h1 class="heading">Our Blog</h1>
   </div>
-  <div style="padding: 7px;">
+  <div
+    style="padding: 7px;"
+    data-toggle="animation"
+    data-animateonscroll="repeat"
+    data-animation="slideInUp"
+    class="fa-1x slow"
+  >
     <div style="color: #fff;">
       <div style="margin: 10px auto; max-width: 1100px; text-align: center;">
         <p>
@@ -21,7 +27,14 @@
     {% for i in blogs %}
 
     <div class="col-md">
-      <div class="card" style="width: 350px; margin: 20px auto;">
+      <div
+        class="card"
+        style="width: 350px; margin: 20px auto;"
+        data-toggle="animation"
+        data-animateonscroll="repeat"
+        data-animation="slideInUp"
+        class="fa-1x slow"
+      >
         {% if i.image_url %}
         <img src="{{i.image_url}}" class="card-img-top" alt="..." />
         {% endif %}
