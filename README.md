@@ -10,7 +10,7 @@
 <a href="https://github.com/rishav4101/debsocnitdWeb/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/rishav4101/debsocnitdWeb"></a>
 <a href="https://github.com/rishav4101/debsocnitdWeb/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/rishav4101/debsocnitdWeb"></a>
 <a href="https://github.com/rishav4101/debsocnitdWeb/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/rishav4101/debsocnitdWeb"></a>
-<a href="https://github.com/rishav4101/debsocnitdWeb"><img alt="GitHub license" src="https://img.shields.io/github/license/rishav4101/debsocnitdWeb"></a>
+<a href="https://github.com/rishav4101/debsocnitdWeb/LICENSE.md"><img alt="GitHub license" src="https://img.shields.io/github/license/rishav4101/debsocnitdWeb"></a>
 ## Description
 The official website of Debating Society, Nit Durgapur. Built with [Django](https://www.djangoproject.com/) and [MDB](https://mdbootstrap.com/).
 
