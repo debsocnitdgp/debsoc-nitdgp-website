@@ -7,6 +7,8 @@
   The Debating Society, Nit Durgapur
 </h1>
 
+![Django CI](https://github.com/rishav4101/debsocnitdWeb/workflows/Django%20CI/badge.svg)
+
 <a href="https://github.com/rishav4101/debsocnitdWeb/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/rishav4101/debsocnitdWeb"></a>
 <a href="https://github.com/rishav4101/debsocnitdWeb/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/rishav4101/debsocnitdWeb"></a>
 <a href="https://github.com/rishav4101/debsocnitdWeb/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/rishav4101/debsocnitdWeb"></a>
