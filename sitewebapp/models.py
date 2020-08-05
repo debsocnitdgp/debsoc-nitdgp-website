@@ -23,7 +23,7 @@ class Members(models.Model):
     post = models.CharField(max_length=100, null=True, blank=True)
     dp = models.ImageField(upload_to='memberDPs/', blank=True, null=True)
     facebook_url = models.URLField(max_length=300, null=True, blank=True)
-    twitter_url = models.URLField(max_length=300, null=True, blank=True)
+    instagram_url = models.URLField(max_length=300, null=True, blank=True)
     linkedin_url = models.URLField(max_length=300, null=True, blank=True)
 
     def __str__(self):

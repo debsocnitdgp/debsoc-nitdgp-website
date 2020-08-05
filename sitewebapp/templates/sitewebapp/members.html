@@ -13,12 +13,19 @@
     <div style="color: #fff;">
       <div style="margin: 10px auto; max-width: 1100px; text-align: center;">
         <p>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content. Some quick example text to build on the
-          card title and make up the bulk of the card's content. Some quick
-          example text to build on the card title and make up the bulk of the
-          card's content. Some quick example text to build on the card title and
-          make up the bulk of the card's content.
+          The Debating Society, NIT Durgapur, is an ardent believer of a
+          wholesome development where students would actively involve themselves
+          in issues concerning social interest and upsurge. As responsible
+          citizens, we feel the importance to amplify voices when the nation
+          requires our support and opinions. We look forward to participation
+          from the youth wing with solutions to the massive lockjaws with
+          intellect, humanity and feasibility. Each consecutive step of our club
+          attempts to bring a stir towards positive outcomes in the society and
+          provide a platform to creative ideologies piloting progress. We
+          believe the youth of the hour can bring a change towards positivity
+          and stability only when we are vigilant, receptive and equally
+          responsive in raising our voices and directing our thought processes
+          towards the present issues concerning the society.
         </p>
       </div>
     </div>
@@ -53,8 +60,102 @@
           </li>
           <li>
             <a
-              href="{{i.twitter_url}}"
-              class="fa fa-twitter"
+              href="{{i.instagram_url}}"
+              class="fa fa-instagram"
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="{{i.linkedin_url}}"
+              class="fa fa-linkedin"
+              aria-hidden="true"
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="row">
+    {% for i in members3 %}
+    <div class="col-md">
+      <div
+        class="our-team"
+        style="width: 250px; margin: 20px auto;"
+        data-toggle="animation"
+        data-animateonscroll="repeat"
+        data-animation="zoomIn"
+        class="fa-1x slow"
+      >
+        <div class="picture">
+          {% if i.dp %}
+          <img class="img-fluid" src="{{ i.dp.url }}" />
+          {% endif %}
+        </div>
+        <div class="team-content">
+          <h3 class="name">{{i.firstname}}</h3>
+          <h4 class="title">{{i.post}}</h4>
+        </div>
+        <ul class="social">
+          <li>
+            <a
+              href="{{i.facebook_url}}"
+              class="fa fa-facebook"
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="{{i.instagram_url}}"
+              class="fa fa-instagram"
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="{{i.linkedin_url}}"
+              class="fa fa-linkedin"
+              aria-hidden="true"
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="row">
+    {% for i in members2 %}
+    <div class="col-md">
+      <div
+        class="our-team"
+        style="width: 250px; margin: 20px auto;"
+        data-toggle="animation"
+        data-animateonscroll="repeat"
+        data-animation="zoomIn"
+        class="fa-1x slow"
+      >
+        <div class="picture">
+          {% if i.dp %}
+          <img class="img-fluid" src="{{ i.dp.url }}" />
+          {% endif %}
+        </div>
+        <div class="team-content">
+          <h3 class="name">{{i.firstname}}</h3>
+          <h4 class="title">{{i.post}}</h4>
+        </div>
+        <ul class="social">
+          <li>
+            <a
+              href="{{i.facebook_url}}"
+              class="fa fa-facebook"
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="{{i.instagram_url}}"
+              class="fa fa-instagram"
               aria-hidden="true"
             ></a>
           </li>

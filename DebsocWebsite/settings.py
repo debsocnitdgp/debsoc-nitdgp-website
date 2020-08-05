@@ -89,7 +89,16 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'debsoc',
+#         'USER': 'debsocuser',
+#         'PASSWORD': 'debsoc',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
