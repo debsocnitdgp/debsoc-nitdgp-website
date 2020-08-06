@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
     'sitewebapp',
+    'cloudinary',
 
 ]
 
@@ -75,30 +77,29 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'DebsocWebsite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'db',
-        'PORT': '5432',
-    }
-}
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'debsoc',
-#         'USER': 'debsocuser',
-#         'PASSWORD': 'debsoc',
-#         'HOST': 'localhost',
-#         'PORT': '',
+#         'NAME': 'postgres',
+#         'USER': 'postgres',
+#         'PASSWORD': 'postgres',
+#         'HOST': 'db',
+#         'PORT': '5432',
 #     }
 # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'debsoc',
+        'USER': 'debsocuser',
+        'PASSWORD': 'debsoc',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -124,7 +125,6 @@ SITE_ID = 1
 
 LANGUAGE_CODE = 'en-us'
 
-
 TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
@@ -136,7 +136,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'hdqtmtoze',
+    'API_KEY': '862579851327152',
+    'API_SECRET': 'zhEZix-M3dQ9ZVzabksRKSsSr_k',
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATIC_URL = '/sitewebapp/static/'
 

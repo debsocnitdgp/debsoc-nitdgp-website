@@ -78,7 +78,7 @@
 
   <body style="background-color: #000;" onload="myFunction()">
     <div id="loading">
-      <img class="img-fluid" src="{% static 'dsgif.gif' %}" />
+      <img class="img-fluid" src="{% static 'DEBSOClogowhitePNG.png' %}" />
     </div>
     <!--Navbar-->
     <nav
@@ -90,18 +90,20 @@
       "
     >
       <div class="container-fluid">
+        <a href="{% url 'index' %}">
         <img
           class="img-fluid"
           style="width: 27px;"
           src="{% static 'DEBSOClogowhitePNG.png' %}"
         />
-        <h2
+        </a>
+        <a href="{% url 'index' %}"><h2
           style="text-align: center;"
           class="navbar-brand"
           style="font-family: 'Bebas Neue', cursive;"
         >
           &nbsp;&nbsp;&nbsp;&nbsp;The Debating Society&nbsp;&nbsp;&nbsp;&nbsp;
-        </h2>
+        </h2></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -152,7 +154,7 @@
         <div class="row" style="margin: 20px;">
           <!--Grid column-->
           <div
-            class="col-8"
+            class="col-md-8 col-xs-12"
             style="
               text-align: center;
               display: flex;
@@ -195,7 +197,7 @@
 
           <!--Grid column-->
           <div
-            class="col-4"
+            class="col-md-4 col-xs-12"
             style="
               text-align: center;
               display: flex;
@@ -208,13 +210,13 @@
 
               <ul class="list-unstyled">
                 <li>
-                  <a href="{{i.facebook_url}}" class="fa fa-facebook text-white" aria-hidden="true" style="font-size: 21px;"></a>
+                  <a href="https://www.facebook.com/debatingsociety3103.nitd/" class="fa fa-facebook text-white" aria-hidden="true" style="font-size: 21px;"></a>
                 </li>
                 <li>
-                  <a href="{{i.twitter_url}}" class="fa fa-instagram text-white" aria-hidden="true" style="font-size: 21px;"></a>
+                  <a href="https://www.instagram.com/debsocnitd/" class="fa fa-instagram text-white" aria-hidden="true" style="font-size: 21px;"></a>
                 </li>
                 <li>
-                  <a href="{{i.linkedin_url}}"" class="fa fa-linkedin text-white" aria-hidden="true" style="font-size: 21px;"></a>
+                  <a href="https://www.linkedin.com/company/debating-society-nit-durgapur/about/" class="fa fa-linkedin text-white" aria-hidden="true" style="font-size: 21px;"></a>
                 </li>
               </ul>
             </div>
@@ -234,7 +236,7 @@
         "
       >
         © 2020 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/"> Debsocnitdgp</a>
+        <a class="text-white" href="{% url 'index' %}"> Debsocnitdgp</a>
       </div>
       <!-- Copyright -->
     </footer>
@@ -269,7 +271,7 @@
       $(window).load(function () {
         setTimeout(function () {
           $("#loading").fadeOut("slow");
-        }, 1200);
+        }, 800);
       });
     </script>
   </body>
