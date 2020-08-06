@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
     'sitewebapp',
+    'cloudinary_storage',
     'cloudinary',
 
 ]
@@ -136,12 +136,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'hdqtmtoze',
-    'API_KEY': '862579851327152',
-    'API_SECRET': 'zhEZix-M3dQ9ZVzabksRKSsSr_k',
-}
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 STATIC_URL = '/sitewebapp/static/'
 
@@ -149,5 +144,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, '/sitewebapp/static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'hdqtmtoze',
+    'API_KEY': '862579851327152',
+    'API_SECRET': 'zhEZix-M3dQ9ZVzabksRKSsSr_k',
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 django_heroku.settings(locals())
