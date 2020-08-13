@@ -2,14 +2,14 @@ from django.db import models
 
 # Create your models here.
 YEAR = (
-    ('1', 'Second'),
-    ('2', 'Third'),
-    ('3', 'Fourth'),
+    ('Second', 'Second'),
+    ('Third', 'Third'),
+    ('Fourth', 'Fourth'),
 )
 
 MODE = (
-    ('1', 'Online'),
-    ('2', 'Offline'),
+    ('Online', 'Online'),
+    ('Offline', 'Offline'),
 )
 
 
@@ -67,7 +67,7 @@ class event(models.Model):
     poster = models.ImageField(
         upload_to='eventPosters/', blank=True, null=True)
     event_datetime = models.DateTimeField(
-        'Date of event : ', auto_now_add=True)
+        'Date of event : ', auto_now_add=False)
     event_mode = models.CharField(
         max_length=15, choices=MODE, default='Online')
     active = models.BooleanField(default=True)

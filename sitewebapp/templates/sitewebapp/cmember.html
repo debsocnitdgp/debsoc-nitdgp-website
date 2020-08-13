@@ -1,0 +1,16 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>Debsocnitdgp</title>
+  </head>
+  <body>
+  <h3>Kya hal chal ?</h3>
+  <h4>Form Bhar diiye pleasee (Contact rishav for any issue)</h4>
+  <form method="POST" class="form-horizontal form_middle" enctype='multipart/form-data' action="." style="text-align:center;">
+  {% csrf_token %}
+  {{cform.as_p}}
+  <input type="submit" value="Upload"/>
+  </form>
+  </body>
+<html>
