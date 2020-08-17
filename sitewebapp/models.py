@@ -20,7 +20,7 @@ class Members(models.Model):
     email = models.EmailField(max_length=254)
     bio = models.TextField(default='', null=True, blank=True)
     year = models.CharField(max_length=10, choices=YEAR, default='Second')
-    post = models.CharField(max_length=100, null=True, blank=True)
+    post = models.CharField(max_length=100, null=True, blank=True, default='Senior Member')
     dp = models.ImageField(upload_to='memberDPs/', blank=True, null=True)
     facebook_url = models.URLField(max_length=300, null=True, blank=True)
     instagram_url = models.URLField(max_length=300, null=True, blank=True)
