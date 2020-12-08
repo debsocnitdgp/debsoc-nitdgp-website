@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect, JsonResponse
 from .models import event, Members, blog, Comments
+from django.db.models import Count
 from .forms import CommentForm, MemberAddForm
 from django.utils import timezone
 from django.views.decorators.cache import cache_control, never_cache
@@ -16,7 +17,7 @@ def about(request):
 def index(request):
     someevents = event.objects.filter(
         active=True).order_by('-event_datetime')[:3]
-    somemembers = Members.objects.filter(year="Fourth").order_by('-post')
+    somemembers = Members.objects.filter(year="Fourth").order_by('sno')
     someblogs = blog.objects.filter(active=True).order_by('-created_on')[:2]
     return render(request, 'sitewebapp/index.html', {'eventsI': someevents, 'membersI': somemembers, 'blogsI': someblogs})
 
@@ -59,8 +60,13 @@ def blog_view(request, blog_id):
 
 @never_cache
 def event_home(request):
-    events = event.objects.filter(active=True).order_by('-event_datetime')
-    return render(request, 'sitewebapp/eventsHome.html', {'events': events})
+    events_up = event.objects.filter(active=True).filter(event_status='Upcoming').order_by('-event_datetime')
+    events_past = event.objects.filter(active=True).filter(event_status='Past').order_by('-event_datetime')
+    events_live = event.objects.filter(active=True).filter(event_status='Live').order_by('-event_datetime') 
+    live_ev = int(len(events_live))
+    print(live_ev)
+    up_ev = int(len(events_up))
+    return render(request, 'sitewebapp/eventsHome.html', {'events_up': events_up, 'events_past': events_past, 'events_live': events_live, 'live_ev': live_ev, 'up_ev': up_ev})
 
 
 @never_cache
@@ -71,9 +77,9 @@ def event_view(request, event_id):
 
 @never_cache
 def members(request):
-    members4 = Members.objects.filter(year="Fourth").order_by('-post')
-    members3 = Members.objects.filter(year="Third").order_by('-post')
-    members2 = Members.objects.filter(year="Second").order_by('-post')
+    members4 = Members.objects.filter(year="Fourth").order_by('sno')
+    members3 = Members.objects.filter(year="Third").order_by('sno')
+    members2 = Members.objects.filter(year="Second").order_by('post')
     return render(request, 'sitewebapp/members.html', {'members4': members4, 'members3': members3, 'members2': members2})
 
 @never_cache

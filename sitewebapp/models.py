@@ -12,7 +12,11 @@ MODE = (
     ('Offline', 'Offline'),
 )
 
-
+STATUS = (
+    ('Upcoming', 'Upcoming'),
+    ('Past', 'Past'),
+    ('Live', 'Live'),
+)
 class Members(models.Model):
     username = models.CharField(max_length=255)
     firstname = models.CharField(max_length=255)
@@ -21,6 +25,7 @@ class Members(models.Model):
     bio = models.TextField(default='', null=True, blank=True)
     year = models.CharField(max_length=10, choices=YEAR, default='Second')
     post = models.CharField(max_length=100, null=True, blank=True, default='Senior Member')
+    sno = models.IntegerField(blank=True, null =True)
     dp = models.ImageField(upload_to='memberDPs/', blank=True, null=True)
     facebook_url = models.URLField(max_length=300, null=True, blank=True)
     instagram_url = models.URLField(max_length=300, null=True, blank=True)
@@ -70,6 +75,8 @@ class event(models.Model):
         'Date of event : ', auto_now_add=False)
     event_mode = models.CharField(
         max_length=15, choices=MODE, default='Online')
+    event_status = models.CharField(
+        max_length=20, choices=STATUS, default='Past')
     active = models.BooleanField(default=True)
 
     class Meta:
