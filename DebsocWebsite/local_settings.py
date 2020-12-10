@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'y&z($el+d%sp8foi24e_=ng&m*v^h@nrbm3@4k=8)*i#o5uyco'
+SECRET_KEY = 'hehe_lol_no'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -168,8 +168,8 @@ MEDIA_URL = '/media/'
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'hdqtmtoze',
-    'API_KEY': '862579851327152',
-    'API_SECRET': 'zhEZix-M3dQ9ZVzabksRKSsSr_k',
+    'API_KEY': 'fo',
+    'API_SECRET': 'oversmart?',
 }
 #DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
