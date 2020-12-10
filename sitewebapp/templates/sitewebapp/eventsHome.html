@@ -1,4 +1,27 @@
 {% extends "sitewebapp/base.html" %} {% block content %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+  .spin{
+    left: 50%;
+    transform: translateX(-20px) !important;
+    transform: translateY(-50px);
+    z-index: 9999;
+    box-shadow: black;
+    /* position: absolute; */
+  }
+  .over{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+  }
+</style>
+
 <div class="text-center">
   <div class="headbox">
     <h1 class="heading">Our Events</h1>
@@ -28,8 +51,123 @@
       </div>
     </div>
   </div>
+
+  {% if live_ev > 0 %}
+    <br>
+    <br>
+    <h1 class ="heading" style="color:rgb(212, 218, 216);" data-toggle="animation"
+    data-animateonscroll="repeat"
+    data-animation="fadeInUp"
+    class="fa-1x slow"><u>LIVE EVENTS</u></h1>
+    <div class="row">
+      {% for i in events_live %}
+      
+      <div class="col-md">
+        <div
+          class="card"
+          style="
+            width: 350px;
+            margin: 20px auto;
+
+            box-shadow: 3px 3px 4px #000;
+            border-radius: 8px;
+          "
+          data-toggle="animation"
+          data-animateonscroll="repeat"
+          data-animation="slideInUp"
+          class="fa-1x slow"
+        >
+        <div class = "over">
+          <i class="fa fa-spinner w3-spin spin" style="font-size:60px;color:rgb(235, 254, 255);"></i>
+        </div>
+          {% if i.poster %}
+          <div class = "live">
+            NOW LIVE!
+          </div>
+          <img src="{{i.poster.url}}" class="card-img-top" alt="..." />
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">{{i.event_name}}</h5>
+            <p>{{i.event_datetime}}</p>
+            <p>{{i.event_mode}}</p>
+            <a
+              href="{% url 'event_view' i.id %}"
+              class="btn btn-outline-white btn-rounded"
+              style="color: #fff;"
+              >Explore</a
+            >
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+  {% else %}
+    <h3 class = "heading" style="color:rgb(216, 218, 217);" data-toggle="animation"
+    data-animateonscroll="repeat"
+    data-animation="fadeInUp"
+    class="fa-1x slow"></h3>
+  {% endif %}
+  
+  <br>
+  <br>
+  <h1 class ="heading" style="color:rgb(216, 218, 217);" data-toggle="animation"
+  data-animateonscroll="repeat"
+  data-animation="fadeInUp"
+  class="fa-1x slow"><u>UPCOMING EVENTS</u></h1>
+  {% if up_ev > 0 %}
   <div class="row">
-    {% for i in events %}
+    {% for i in events_up %}
+
+    <div class="col-md">
+      <div
+        class="card"
+        style="
+          width: 350px;
+          margin: 20px auto;
+
+          box-shadow: 3px 3px 4px #000;
+          border-radius: 8px;
+        "
+        data-toggle="animation"
+        data-animateonscroll="repeat"
+        data-animation="slideInUp"
+        class="fa-1x slow"
+      >
+        {% if i.poster %}
+        <img src="{{i.poster.url}}" class="card-img-top" alt="..." />
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{i.event_name}}</h5>
+          <p>{{i.event_datetime}}</p>
+          <p>{{i.event_mode}}</p>
+          <a
+            href="{% url 'event_view' i.id %}"
+            class="btn btn-outline-white btn-rounded"
+            style="color: #fff;"
+            >Explore</a
+          >
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+  {% else %}
+    <h4 style="color:rgb(216, 218, 217);" data-toggle="animation"
+    data-animateonscroll="repeat"
+    data-animation="fadeInUp"
+    class="fa-1x slow">No upcoming events currently!</h4>
+  {% endif %}
+
+  <br>
+  <br>
+  <h1 class ="heading" style="color:rgb(212, 218, 216);" data-toggle="animation"
+  data-animateonscroll="repeat"
+  data-animation="fadeInUp"
+  class="fa-1x slow"><u>PAST EVENTS</u></h1>
+  <div class="row">
+    {% for i in events_past %}
 
     <div class="col-md">
       <div
