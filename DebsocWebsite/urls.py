@@ -19,10 +19,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.defaults import page_not_found
 from django.conf.urls import url
+from django.views.generic import TemplateView
 
 
 
 urlpatterns = [
     path('', include('sitewebapp.urls')),
+    path('login/', TemplateView.as_view(template_name="social_app/index.html")),
+    path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
