@@ -26,6 +26,7 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('', include('sitewebapp.urls')),
     path('login/', TemplateView.as_view(template_name="social_app/index.html")),
+    path('tour/', include('Tour.urls')),
     path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
