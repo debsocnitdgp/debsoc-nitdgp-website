@@ -188,15 +188,17 @@
           Blogging connects similar thinkers and communities worldwide while letting your thoughts and ideas come to light.
           As a home for open and thoughtful expressions, we let unleash your imagination and feelings into a work of art.
         </p>
-        <a href="#" type="button" class="btn btn-light btn-rounded disabled">
-          Coming Soon
+        <a href="{% url 'blog_home' %}" type="button" class="btn btn-light btn-rounded">
+          Explore
         </a>
       </div>
     </div>
   </div>
 </div>
-<!-- <div class="text-center">
-  <h1><span class="badge bg-primary">Our Blog</span></h1>
+<div class="text-center">
+  <div class="headbox">
+    <h1 class="heading">Our Blog</h1>
+  </div>
   <div class="row">
     {% for i in blogsI %}
 
@@ -213,14 +215,14 @@
           <p>{{i.blog_text}}</p>
           <p>{{i.created_on}}</p>
           <p>{{i.author}}</p>
-          <a href="#" class="btn btn-primary">Button</a>
+          <a href="{% url 'blog_view' i.id %}" class="btn btn-primary">View More</a>
         </div>
       </div>
     </div>
 
     {% endfor %}
   </div>
-</div> -->
+</div> 
 <div style="padding-top: 1px;">
   <div class="container">
     <div class="headbox">
