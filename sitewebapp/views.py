@@ -19,12 +19,16 @@ def index(request):
         active=True).order_by('-event_datetime')[:3]
     somemembers = Members.objects.filter(year="Fourth").order_by('sno')
     someblogs = blog.objects.filter(active=True).order_by('-created_on')[:2]
+    for i in someblogs:
+        i.created_on = i.created_on.date()
     return render(request, 'sitewebapp/index.html', {'eventsI': someevents, 'membersI': somemembers, 'blogsI': someblogs})
 
 
 @never_cache
 def blog_home(request):
     blogs = blog.objects.filter(active=True).order_by('-created_on')
+    for i in blogs:
+        i.created_on = i.created_on.date()
     return render(request, 'sitewebapp/blogHome.html', {'blogs': blogs})
 
 
