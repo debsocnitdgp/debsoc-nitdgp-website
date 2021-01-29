@@ -1,5 +1,5 @@
 from django.urls import path
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.conf import settings
 import django.views.defaults
 from django.conf.urls.static import static
@@ -13,7 +13,9 @@ urlpatterns = [
     path('Events/<int:event_id>/', views.event_view, name="event_view"),
     path('Members/', views.members, name='members'),
     path('About/', views.about, name="about"),
-    path('qscgyjmkpligv538d47c6vr6r6v57vebt85v/', views.cmember, name="cmember"),
+    path('temp/', views.cmember, name="cmember"),
+    path('accounts/', include('allauth.urls')),
+    path('Audition/', views.audition, name="audition"),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
