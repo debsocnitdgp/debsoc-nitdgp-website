@@ -84,3 +84,50 @@ class event(models.Model):
 
     def __str__(self):
         return self.event_name
+
+class Candidates(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.CharField(max_length=255, unique=True)
+    phone = models.CharField(max_length=20)
+    status = models.BooleanField(default=1)
+
+
+    class Meta:
+        ordering = ['-status', 'name']
+
+    def __str__(self):
+        return "{} : status {}".format(self.name, self.status)
+
+class auditionRounds(models.Model):
+    roundno = models.IntegerField(default=1)
+    candidate = models.ForeignKey(Candidates, on_delete=models.CASCADE, related_name='inductees')
+
+    def __str__(self):
+        return "Round: {}".format(self.roundno)
+
+class auditionQuestions(models.Model):
+    roundno = models.IntegerField(default=1)
+    serialno = models.IntegerField(default=1)
+    question = models.CharField(max_length=5000)
+    round = models.ForeignKey(auditionRounds, on_delete=models.CASCADE, related_name='round')
+
+    class Meta:
+        unique_together = ('roundno', 'serialno',)
+        ordering = ['roundno', 'serialno']
+
+    def __str__(self):
+        return "Round {}, qno {} : {}".format(self.roundno, self.serialno, self.question)
+
+class auditionAnswers(models.Model):
+    q = models.ForeignKey(auditionQuestions, on_delete=models.CASCADE, related_name='problem')
+    ans = models.CharField(max_length=5000)
+    ansby = models.ForeignKey(Candidates, on_delete=models.CASCADE, related_name='candidate')
+    anstime = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return "Round {} q: {}, answered by {}".format(self.q.roundno , self.q.serialno, self.ansby.name)
+
+
+
+
+

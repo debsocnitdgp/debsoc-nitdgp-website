@@ -109,3 +109,12 @@ def handler404(request, exception):
 def handler500(request):
     return HttpResponse("Wrong URL")
 
+
+@never_cache
+def audition(request):
+    if request.user.is_authenticated:        
+
+        #Assign each candidate to the Candidates model. P.s: Roundno, status, user ka basic info
+        return HttpResponse("Loged in ho")       
+    else:
+        return render(request, 'sitewebapp/audtion.html')
