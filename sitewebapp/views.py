@@ -167,9 +167,11 @@ def auditionform(request):
     round_no = auditionRounds.objects.filter(round_status=True)
     ques = auditionQuestions.objects.filter(roundno = round_no[0].roundno)
     solved = auditionAnswers.objects.filter(roundno = round_no[0].roundno, ansby=cand)
-    if cand.status is "Rejected" or "Pending":
+    if cand.status == "Rejected" or cand.status == "Pending":
+        print(cand.status)
         return HttpResponseRedirect("/Audition/")
     if solved:
+        print(solved)
         return HttpResponseRedirect("/Audition/")
     if request.method == 'POST':
         if solved:
