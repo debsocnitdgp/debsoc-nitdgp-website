@@ -94,8 +94,8 @@ class event(models.Model):
 class Candidates(models.Model):
     name = models.CharField(max_length=255)
     email = models.CharField(max_length=255, unique=True)
-    phone = models.CharField(max_length=20, null=True)
-    status = models.CharField(max_length=15, choices=ASTAT, default='Pending')
+    phone = models.CharField(max_length=20, null=True, blank=True)
+    status = models.CharField(max_length=15, choices=ASTAT, default='Selected')
 
     class Meta:
         ordering = ['-status', 'name']
@@ -128,7 +128,7 @@ class auditionQuestions(models.Model):
 class auditionAnswers(models.Model):
     roundno = models.IntegerField(default=1)
     q = models.ForeignKey(auditionQuestions, on_delete=models.CASCADE, related_name='problem')
-    ans = models.CharField(max_length=5000)
+    ans = models.CharField(max_length=800)
     ansby = models.ForeignKey(Candidates, on_delete=models.CASCADE, related_name='candidate')
     anstime = models.DateTimeField(auto_now=True)
 
