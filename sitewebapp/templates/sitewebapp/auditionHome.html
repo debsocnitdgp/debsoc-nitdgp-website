@@ -1,14 +1,45 @@
-{% extends "sitewebapp/base.html" %} {% block content %}
-<div> {{round_no}}<div>
-<div>{{status}}</div>
-<div>{{btn_status}}</div>
+{% extends "sitewebapp/base.html" %} {% load static %} {% block content %}
+<style>
+body{
+    background-color:#fff !important;
+    background-image: url("{% static 'bg.jpg' %}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    background-attachment: fixed;
+}
+.navbar, footer{
+    background-color: #cc0262 !important;
+}
+</style>
+<div class="audi-wrap">
+<div style="width: 100%;text-align: center; display: flex; align-items: center; justify-content: center; margin: 30px auto;">
+  <div class="sign" style="display: block; width: 90%; max-width: 430px;text-align: center;font-size:35px; position: relative; margin: 0 auto;">
+     <span class="fast-flicker">deb</span>soc &nbsp;<span class="flicker">audi</span>tions 20<span class="fast-flicker">21</span>
+    </div>
+</div>
+<div style="margin-bottom: 30px;">
+<div style="font-size:20px;" class="sign">Round&nbsp;<span class="fast-flicker">Num</span>ber : <span class="flicker">{{round_no}}</span></div>
+{% if status %}
+<div style="font-size:17px;" class="sign flicker">Your status : Alive</div>
+{% else %}
+<div style="font-size:17px;" class="sign flicker">Your status : Dead</div>
+{% endif %}
+</div>
 <div>
 {% if btn_status == True %}
-<a href="{% url 'auditionform' %}"><div>Attempt</div></a>
+<a  href="{% url 'auditionform' %}">
+      <button class="btnn" id="neon-text">  Attempt </button>
+        
+    </a>
 {% endif %}
 </div>
 
+<div style="font-size:20px; margin-top:30px; margin-bottom:10px;" class="sign">All candidates </div>
+<div class="leaderboard">
 {% for can in cands %}
-    <div>{{can.name}}  {{can.email}}</div>
+    <div class="lbar">{{can.name}}</div>
 {% endfor %}
+</div>
+</div>
 {% endblock %}
