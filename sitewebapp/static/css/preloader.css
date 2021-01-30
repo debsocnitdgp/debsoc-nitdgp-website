@@ -236,16 +236,14 @@
     outline: none;
     color: #00b627;
     font-size: 16px;
-    line-height: 22px;
-    font-size: 1.6rem;
-    line-height: 2.4rem;
+    line-height: 25px;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 2px;
     font-weight: 300;
     width: auto;
     white-space: pre-wrap;
-    padding: 8px 1.5em;
+    padding: 8px 1.1em;
     transition: all 0.3s ease;
     -webkit-appearance: none;
     -webkit-border-radius: 0;
