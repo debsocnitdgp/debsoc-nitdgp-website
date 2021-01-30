@@ -17,6 +17,12 @@ STATUS = (
     ('Past', 'Past'),
     ('Live', 'Live'),
 )
+
+ASTAT = (
+    ('Pending', 'Pending'),
+    ('Selected', 'Selected'),
+    ('Rejected', 'Rejected')
+)
 class Members(models.Model):
     username = models.CharField(max_length=255)
     firstname = models.CharField(max_length=255)
@@ -89,7 +95,7 @@ class Candidates(models.Model):
     name = models.CharField(max_length=255)
     email = models.CharField(max_length=255, unique=True)
     phone = models.CharField(max_length=20, null=True)
-    status = models.BooleanField(default=True)
+    status = models.CharField(max_length=15, choices=ASTAT, default='Pending')
 
     class Meta:
         ordering = ['-status', 'name']

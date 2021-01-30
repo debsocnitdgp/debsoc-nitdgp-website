@@ -131,15 +131,19 @@ def audition(request):
             btn_status = False
         else:
             attempt = auditionAnswers.objects.filter(roundno = round_no[0].roundno, ansby=cand)
+            can = Candidates.objects.filter(status="Selected", email=cand.email)
             print(attempt)
-            if not attempt:
-                btn_status = True
+            if can:
+                if not attempt: 
+                    btn_status = True
+                else:
+                    btn_status = False
             else:
-                btn_status = False
+                btn_status = False       
         if round_no[0].roundno is 0:
             cands = None
         else:
-            cands = Candidates.objects.filter(status=True).order_by('-name')
+            cands = Candidates.objects.filter(status="Selected").order_by('-name')
         return render(request, 'sitewebapp/auditionHome.html',{'status':cand_status, 'round_no':round_no[0].roundno,'btn_status': btn_status, 'cands': cands})
     else:
         return render(request, 'sitewebapp/audition.html')
@@ -167,8 +171,10 @@ def auditionform(request):
             answer.roundno = round_no[0].roundno
             answer.anstime = datetime.now()
             answer.save()
+            answer = auditionAnswers()
         return audition(request)
     else:
+        answer = auditionAnswers()
         return render(request, 'sitewebapp/auditionForm.html', {'round_no': round_no[0].roundno, 'ques': ques})
     return render(request, 'sitewebapp/auditionForm.html', {'round_no': round_no[0].roundno, 'ques': ques})
 
