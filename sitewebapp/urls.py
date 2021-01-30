@@ -17,6 +17,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('Audition/', views.audition, name="audition"),
     path('AuditionHome/', views.auditionhome, name="auditionhome"),
-    path(r'^showdata/(?P<email>\s+)/$', views.showdata, name="showdata")
+    path('AuditionForm/', views.auditionform, name="auditionform"),
+    path('showdata/<email>/', views.showdata, name="showdata")
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

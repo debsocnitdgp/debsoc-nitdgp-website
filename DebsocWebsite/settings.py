@@ -159,6 +159,22 @@ USE_L10N = True
 
 USE_TZ = True
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+    }
+}
+LOGIN_REDIRECT_URL='/Audition/'
 # CSRF_COOKIE_SECURE = True
 # SESSION_COOKIE_SECURE = True
 # Static files (CSS, JavaScript, Images)

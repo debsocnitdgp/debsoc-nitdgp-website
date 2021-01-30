@@ -1,3 +1,12 @@
 {% extends "sitewebapp/base.html" %} {% block content %}
-
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        {% for q in ques %}
+        <div>{{q.question}}</div>
+        <input type="text" name="{{q.serialno}}" placeholder="Answer" autocomplete="off">
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</div>
 {% endblock %}

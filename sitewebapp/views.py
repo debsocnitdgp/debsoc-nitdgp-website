@@ -7,6 +7,7 @@ from django.utils import timezone
 from django.views.decorators.cache import cache_control, never_cache
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
+from datetime import datetime
 # Create your views here.
 
 @never_cache
@@ -124,22 +125,24 @@ def audition(request):
         cand = Candidates.objects.get(email=cand.email)
         cand_status = cand.status
         round_no = auditionRounds.objects.filter(round_status=True)
-        ques = auditionRounds.objects.filter(roundno = round_no)
-        if ques is None:
+        ques = auditionQuestions.objects.filter(roundno = round_no[0].roundno)
+        print(ques)
+        if not ques:
             btn_status = False
         else:
-            attempt = auditionRounds.objects.filter(candidate=cand)
-            if  attempt is None:
+            attempt = auditionAnswers.objects.filter(roundno = round_no[0].roundno, ansby=cand)
+            print(attempt)
+            if not attempt:
                 btn_status = True
             else:
                 btn_status = False
-        if round_no[0] is 0:
-            cands = []
+        if round_no[0].roundno is 0:
+            cands = None
         else:
             cands = Candidates.objects.filter(status=True).order_by('-name')
-        return render(request, 'sitewebapp/audtionHome.html',{'status':cand_status, 'round_no':round_no,'btn_status': btn_status, 'cands': cands})
+        return render(request, 'sitewebapp/auditionHome.html',{'status':cand_status, 'round_no':round_no[0].roundno,'btn_status': btn_status, 'cands': cands})
     else:
-        return render(request, 'sitewebapp/audtion.html')
+        return render(request, 'sitewebapp/audition.html')
 
 @login_required
 def auditionhome(request):
@@ -147,22 +150,27 @@ def auditionhome(request):
 
 @login_required
 def auditionform(request):
+    cand = request.user
     cand = Candidates.objects.get(email=cand.email)
     round_no = auditionRounds.objects.filter(round_status=True)
-    ques = auditionRounds.objects.filter(roundno = round_no)
+    ques = auditionQuestions.objects.filter(roundno = round_no[0].roundno)
+    solved = auditionAnswers.objects.filter(roundno = round_no[0].roundno, ansby=cand)
     if request.method == 'POST':
+        if solved:
+            return audition(request)
         for q in ques:
-            ans = request.POST.get(q.serialno)
+            ans = request.POST.get(str(q.serialno))
             answer = auditionAnswers()
             answer.q = q
             answer.ans = ans
             answer.ansby = cand
-            answer.anstime = time.time()
+            answer.roundno = round_no[0].roundno
+            answer.anstime = datetime.now()
             answer.save()
         return audition(request)
     else:
-        return render(request, 'sitewebapp/auditionForm.html', {'round_no': round_no, 'ques': ques})
-    return render(request, 'sitewebapp/auditionForm.html', {'round_no': round_no, 'ques': ques})
+        return render(request, 'sitewebapp/auditionForm.html', {'round_no': round_no[0].roundno, 'ques': ques})
+    return render(request, 'sitewebapp/auditionForm.html', {'round_no': round_no[0].roundno, 'ques': ques})
 
 @user_passes_test(lambda u: u.is_superuser)
 def showdata(request, email):

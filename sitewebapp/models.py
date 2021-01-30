@@ -120,6 +120,7 @@ class auditionQuestions(models.Model):
         return "Round {}, qno {} : {}".format(self.roundno, self.serialno, self.question)
 
 class auditionAnswers(models.Model):
+    roundno = models.IntegerField(default=1)
     q = models.ForeignKey(auditionQuestions, on_delete=models.CASCADE, related_name='problem')
     ans = models.CharField(max_length=5000)
     ansby = models.ForeignKey(Candidates, on_delete=models.CASCADE, related_name='candidate')
