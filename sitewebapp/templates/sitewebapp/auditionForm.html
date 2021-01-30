@@ -1,0 +1,36 @@
+{% extends "sitewebapp/base.html" %} {% load static %} {% block content %}
+<style>
+body{
+    background-color:#fff !important;
+    background-image: url("{% static 'bg.jpg' %}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    background-attachment: fixed;
+}
+.navbar, footer{
+    background-color: #cc0262 !important;
+}
+</style>
+<div class="audi-wrap">
+<div style="width: 100%;text-align: center; display: flex; align-items: center; justify-content: center; margin: 30px auto;">
+  <div class="sign" style="display: block; width: 90%; max-width: 430px;text-align: center;font-size:35px; position: relative; margin: 0 auto;">
+     <span class="fast-flicker">deb</span>soc &nbsp;<span class="flicker">audi</span>tions 20<span class="fast-flicker">21</span>
+    </div>
+</div>
+<div style="width: 95%; max-width: 500px; margin:0 auto; ">
+    <form method="POST">
+        {% csrf_token %}
+        {% for q in ques %}
+        <div style="color: #fff; padding:0px 10px;">{{q.serialno}}. {{q.question}}</div>
+        <div style="margin: 10px;">
+        <textarea type="text" name="{{q.serialno}}" placeholder="Answer" class="form-control texta" autocomplete="off" styte="resize: none !important;" ></textarea>
+        </div>
+        {% endfor %}
+        <div style="width: 100%; display: flex; align-items: center; justify-content: center; padding-top:10px;">
+        <button type="submit" class="btn btn-outline-light">Submit</button>
+        </div>
+    </form>
+</div>
+</div>
+{% endblock %}

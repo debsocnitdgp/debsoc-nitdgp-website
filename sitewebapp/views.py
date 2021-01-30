@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect, JsonResponse
-from .models import event, Members, blog, Comments
+from .models import *
 from django.db.models import Count
 from .forms import CommentForm, MemberAddForm
 from django.utils import timezone
 from django.views.decorators.cache import cache_control, never_cache
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import user_passes_test
+from datetime import datetime
 # Create your views here.
-
 
 @never_cache
 def about(request):
@@ -109,12 +111,70 @@ def handler404(request, exception):
 def handler500(request):
     return HttpResponse("Wrong URL")
 
-
 @never_cache
 def audition(request):
-    if request.user.is_authenticated:        
-
-        #Assign each candidate to the Candidates model. P.s: Roundno, status, user ka basic info
-        return HttpResponse("Loged in ho")       
+    if request.user.is_authenticated:
+        cand = request.user
+        try:
+            cand = Candidates.objects.get(email=cand.email)
+        except Candidates.DoesNotExist:
+            user = Candidates()
+            user.name = cand.first_name + " " + cand.last_name
+            user.email = cand.email
+            user.save()  
+        cand = Candidates.objects.get(email=cand.email)
+        cand_status = cand.status
+        round_no = auditionRounds.objects.filter(round_status=True)
+        ques = auditionQuestions.objects.filter(roundno = round_no[0].roundno)
+        print(ques)
+        if not ques:
+            btn_status = False
+        else:
+            attempt = auditionAnswers.objects.filter(roundno = round_no[0].roundno, ansby=cand)
+            print(attempt)
+            if not attempt:
+                btn_status = True
+            else:
+                btn_status = False
+        if round_no[0].roundno is 0:
+            cands = None
+        else:
+            cands = Candidates.objects.filter(status=True).order_by('-name')
+        return render(request, 'sitewebapp/auditionHome.html',{'status':cand_status, 'round_no':round_no[0].roundno,'btn_status': btn_status, 'cands': cands})
     else:
-        return render(request, 'sitewebapp/audtion.html')
+        return render(request, 'sitewebapp/audition.html')
+
+@login_required
+def auditionhome(request):
+    return audition(request)
+
+@login_required
+def auditionform(request):
+    cand = request.user
+    cand = Candidates.objects.get(email=cand.email)
+    round_no = auditionRounds.objects.filter(round_status=True)
+    ques = auditionQuestions.objects.filter(roundno = round_no[0].roundno)
+    solved = auditionAnswers.objects.filter(roundno = round_no[0].roundno, ansby=cand)
+    if request.method == 'POST':
+        if solved:
+            return audition(request)
+        for q in ques:
+            ans = request.POST.get(str(q.serialno))
+            answer = auditionAnswers()
+            answer.q = q
+            answer.ans = ans
+            answer.ansby = cand
+            answer.roundno = round_no[0].roundno
+            answer.anstime = datetime.now()
+            answer.save()
+        return audition(request)
+    else:
+        return render(request, 'sitewebapp/auditionForm.html', {'round_no': round_no[0].roundno, 'ques': ques})
+    return render(request, 'sitewebapp/auditionForm.html', {'round_no': round_no[0].roundno, 'ques': ques})
+
+@user_passes_test(lambda u: u.is_superuser)
+def showdata(request, email):
+    cand = Candidates.objects.get(email=email)
+    answers = auditionAnswers.objects.filter(ansby=cand)
+    return render(request, 'sitewebapp/showdata.html', {'answers': answers})
+

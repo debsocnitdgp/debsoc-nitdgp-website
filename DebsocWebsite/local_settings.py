@@ -44,6 +44,16 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
 
+     #For nested inlines
+    'nested_inline',
+
+    #For google auth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'django.contrib.sites',
+    'allauth.socialaccount.providers.google',
+
 ]
 
 MIDDLEWARE = [
@@ -93,12 +103,8 @@ WSGI_APPLICATION = 'DebsocWebsite.wsgi.application'
 # }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'debsoc',
-        'USER': 'debsocuser',
-        'PASSWORD': 'debsoc',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -153,6 +159,22 @@ USE_L10N = True
 
 USE_TZ = True
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+    }
+}
+LOGIN_REDIRECT_URL='/Audition/'
 # CSRF_COOKIE_SECURE = True
 # SESSION_COOKIE_SECURE = True
 # Static files (CSS, JavaScript, Images)
