@@ -29,12 +29,11 @@ body{
 {% if btn_status == True %}
 <a  href="{% url 'auditionform' %}">
       <button class="btnn" id="neon-text">  Attempt </button>
-        
     </a>
 {% endif %}
 </div>
 
-<div style="font-size:20px; margin-top:30px; margin-bottom:10px;" class="sign">All candidates </div>
+<div style="font-size:20px; margin-top:30px; margin-bottom:10px;" class="sign">Selected candidates </div>
 <div class="leaderboard">
 {% for can in cands %}
     <div class="lbar">{{can.name}}</div>
