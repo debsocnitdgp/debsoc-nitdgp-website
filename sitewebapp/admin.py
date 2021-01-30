@@ -3,43 +3,36 @@ from .models import Members, blog, Comments, event, Candidates, auditionRounds, 
 from nested_inline.admin import NestedStackedInline, NestedModelAdmin 
 # Register your models here.
 
-
-
 class commentInLine(admin.TabularInline):
     model = Comments
     extra = 1
-
 
 class blogAdmin(admin.ModelAdmin):
     inlines = [commentInLine]
     list_display = ('title', 'author', 'created_on')
     search_fields = ['title']
 
-class answerInLine(NestedStackedInline):
+class answerInLine(admin.TabularInline):
     model = auditionAnswers
     extra = 1
 
-class questionInLine(NestedStackedInline):
+class questionInLine(admin.TabularInline):
     model = auditionQuestions
     extra = 1
     inlines = [answerInLine]
 
-class roundInLine(NestedStackedInline):
-    model = auditionRounds
+class roundInLine(admin.TabularInline):
+    model = auditionRounds.candidate.through
     extra = 1
     inlines = [questionInLine]
 
-
-
-
-class auditionQuestionsAdmin(NestedModelAdmin):
+class auditionQuestionsAdmin(admin.ModelAdmin):
     inlines = [answerInLine]
 
-
-class auditionRoundsAdmin(NestedModelAdmin):
+class auditionRoundsAdmin(admin.ModelAdmin):
     inlines = [questionInLine]
 
-class CandidatesAdmin(NestedModelAdmin):
+class CandidatesAdmin(admin.ModelAdmin):
     inlines = [roundInLine]
 
 

@@ -1,0 +1,9 @@
+{% extends "sitewebapp/base.html" %} {% block content %}
+<div> {{round_no}}<div>
+<div>{{status}}</div>
+<div>
+{% if btn_status == True %}
+<a href="{% url 'auditionform' %}"><div>Attempt</div></a>
+{% endif %}
+</div>
+{% endblock %}

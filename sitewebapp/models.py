@@ -88,9 +88,8 @@ class event(models.Model):
 class Candidates(models.Model):
     name = models.CharField(max_length=255)
     email = models.CharField(max_length=255, unique=True)
-    phone = models.CharField(max_length=20)
-    status = models.BooleanField(default=1)
-
+    phone = models.CharField(max_length=20, null=True)
+    status = models.BooleanField(default=True)
 
     class Meta:
         ordering = ['-status', 'name']
@@ -100,7 +99,9 @@ class Candidates(models.Model):
 
 class auditionRounds(models.Model):
     roundno = models.IntegerField(default=1)
-    candidate = models.ForeignKey(Candidates, on_delete=models.CASCADE, related_name='inductees')
+    round_status = models.BooleanField(default=False)
+    #candidate = models.ForeignKey(Candidates, on_delete=models.CASCADE, related_name='candidates', blank=True, null=True)
+    candidate = models.ManyToManyField(Candidates, related_name='candidates', blank=True, null=True)
 
     def __str__(self):
         return "Round: {}".format(self.roundno)

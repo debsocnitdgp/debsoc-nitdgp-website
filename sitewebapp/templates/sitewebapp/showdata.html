@@ -1,0 +1,8 @@
+{% extends "sitewebapp/base.html" %} {% block content %}
+    {% for ans in answers %}
+        <h3>{{ans.q.roundno}} + {{ans.q.question}}</h3>
+        <p>{{ans.ans}}</p>
+        <h4>{{ans.anstime}}</h4/>
+        <br/>
+    {% endfor %}
+{% endblock %}
