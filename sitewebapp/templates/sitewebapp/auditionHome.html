@@ -33,10 +33,11 @@ canvas {
 
 <div style="margin-bottom: 30px;">
 <div style="font-size:20px;" class="sign">Current&nbsp;<span class="fast-flicker">Rou</span>nd&nbsp;:&nbsp;<span class="flicker">{{round_no}}</span></div>
-{% if round_no > 0 and attempt == True %}
+{% if round_no > 0 and attempt == True and btn_status == False %}
 <div style="font-size:18px;" class="sign flicker">Your status : {{status}}</div>
 {% endif %}
 </div>
+
 <div>
 {% if btn_status == True %}
 <a  href="{% url 'auditionform' %}">
