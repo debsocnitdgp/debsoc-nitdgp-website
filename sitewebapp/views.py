@@ -129,7 +129,6 @@ def audition(request):
             else:
                 user.status = 'Rejected'
                 user.save() 
-             
         cand = Candidates.objects.get(email=cand.email)
         cand_status = cand.status
         print(cand_status)
