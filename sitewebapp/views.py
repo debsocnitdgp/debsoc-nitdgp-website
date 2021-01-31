@@ -123,7 +123,7 @@ def audition(request):
             user = Candidates()
             user.name = cand.first_name + " " + cand.last_name
             user.email = cand.email
-            if round_no[0].roundno is 0:
+            if round_no[0].roundno == 0:
                 user.status = 'Selected'
                 user.save() 
             else:
@@ -143,14 +143,16 @@ def audition(request):
             print(attempt)
             if can:
                 if not attempt: 
-                    attempt = False
                     btn_status = True
                 else:
-                    attempt = True
                     btn_status = False
             else:
-                btn_status = False       
-        if round_no[0].roundno is 0:
+                btn_status = False   
+        if not attempt: 
+            attempt = False
+        else:
+            attempt = True  
+        if round_no[0].roundno == 0:
             cands = None
         else:
             cands = Candidates.objects.filter(status='Selected').order_by('-name')

@@ -11,8 +11,17 @@ body{
 .navbar, footer{
     background-color: #cc0262 !important;
 }
+canvas {
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 0;
+  height: 100vh;
+  width: 100vw;
+}
 </style>
 <div class="audi-wrap">
+
 <div style="width: 100%;text-align: center; display: flex; align-items: center; justify-content: center; margin: 30px auto;">
   <div class="sign" style="display: block; width: 90%; max-width: 430px;text-align: center;font-size:35px; position: relative; margin: 0 auto;">
      <span class="fast-flicker">deb</span>soc &nbsp;<span class="flicker">audi</span>tions 20<span class="fast-flicker">21</span>
@@ -20,7 +29,9 @@ body{
 </div>
 <div style="margin-bottom: 30px;">
 <div style="font-size:20px;" class="sign">Current&nbsp;<span class="fast-flicker">Rou</span>nd&nbsp;:&nbsp;<span class="flicker">{{round_no}}</span></div>
+{% if round_no > 0 %}
 <div style="font-size:17px;" class="sign flicker">Your status : {{status}}</div>
+{% endif %}
 </div>
 <div>
 {% if btn_status == True %}
@@ -32,11 +43,20 @@ body{
 {% endif %}
 </div>
 
+{% if round_no > 0 and cands.length > 0 %}
 <div style="font-size:20px; margin-top:30px; margin-bottom:10px; text-transform:uppercase;" class="sign">Last round pool</div>
 <div class="leaderboard">
 {% for can in cands %}
     <div class="lbar">{{can.name}}</div>
 {% endfor %}
 </div>
+{% endif %}
+
+
 </div>
+
+<script src="{% static 'js/three.min.js' %}"></script>
+  <script src="{% static 'js/OrbitControls.js' %}"></script>
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/contact.js' %}"></script>
 {% endblock %}
