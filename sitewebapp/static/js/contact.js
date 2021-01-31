@@ -12,7 +12,6 @@ $("#menu").on("mouseleave", function() {
 
 })
 
-
 var scene, camera, renderer, stars, starGeo, controls;
 var mouseX = 0,
     mouseY = 0;
@@ -44,8 +43,6 @@ function init() {
     //controls.minPolarAngle = 1.0;
     //controls.maxAzimuthAngle = 0.4;
     //controls.minAzimuthAngle = -0.4;
-
-
 
     starGeo = new THREE.Geometry();
     for (let i = 0; i < 4000; i++) {
