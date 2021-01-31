@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
 from datetime import datetime
 from django.http import HttpResponseRedirect
+import csv
 # Create your views here.
 
 @never_cache
@@ -202,4 +203,20 @@ def showdata(request, email):
     cand = Candidates.objects.get(email=email)
     answers = auditionAnswers.objects.filter(ansby=cand)
     return render(request, 'sitewebapp/showdata.html', {'answers': answers})
+
+@user_passes_test(lambda u: u.is_superuser)
+def selectedCandidates(request):
+    response = HttpResponse(content_type = 'text/csv')
+
+
+    writer = csv.writer(response)
+    writer.writerow(['Name', 'Email', 'Phone', 'Status'])
+
+    for Candidate in Candidates.objects.filter(status='Selected').values_list('name', 'email', 'phone', 'status'):
+        writer.writerow(Candidate)
+    
+    response['Content-Disposition'] = 'attachment; filename = "Selected.csv"'
+
+    return response
+
 
