@@ -33,7 +33,7 @@ canvas {
 
 <div style="margin-bottom: 30px;">
 <div style="font-size:20px;" class="sign">Current&nbsp;<span class="fast-flicker">Rou</span>nd&nbsp;:&nbsp;<span class="flicker">{{round_no}}</span></div>
-{% if round_no > 0 %}
+{% if round_no > 0 and attempt == True %}
 <div style="font-size:18px;" class="sign flicker">Your status : {{status}}</div>
 {% endif %}
 </div>
@@ -51,7 +51,7 @@ canvas {
       <button class="btnn" id="neon-text">  Logout </button>
     </a>
 
-{% if round_no > 0 and cands.length > 0 %}
+{% if round_no > 0 %}
 <div style="font-size:20px; margin-top:30px; margin-bottom:10px; text-transform:uppercase;" class="sign">Last round pool</div>
 <div class="leaderboard">
 {% for can in cands %}
