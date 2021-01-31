@@ -16,7 +16,6 @@ import csv
 def about(request):
     return render(request, 'sitewebapp/about.html')
 
-
 @never_cache
 def index(request):
     someevents = event.objects.filter(
@@ -27,14 +26,12 @@ def index(request):
         i.created_on = i.created_on.date()
     return render(request, 'sitewebapp/index.html', {'eventsI': someevents, 'membersI': somemembers, 'blogsI': someblogs})
 
-
 @never_cache
 def blog_home(request):
     blogs = blog.objects.filter(active=True).order_by('-created_on')
     for i in blogs:
         i.created_on = i.created_on.date()
     return render(request, 'sitewebapp/blogHome.html', {'blogs': blogs})
-
 
 @never_cache
 def blog_view(request, blog_id):
@@ -65,7 +62,6 @@ def blog_view(request, blog_id):
         return render(request, 'sitewebapp/blogPost.html', {'post': post, 'comments': comments, 'new_comment': new_comment, 'comment_form': comment_form})
     return render(request, 'sitewebapp/blogPost.html', {'post': post, 'comments': comments, 'new_comment': new_comment, 'comment_form': comment_form})
 
-
 @never_cache
 def event_home(request):
     events_up = event.objects.filter(active=True).filter(event_status='Upcoming').order_by('-event_datetime')
@@ -76,12 +72,10 @@ def event_home(request):
     up_ev = int(len(events_up))
     return render(request, 'sitewebapp/eventsHome.html', {'events_up': events_up, 'events_past': events_past, 'events_live': events_live, 'live_ev': live_ev, 'up_ev': up_ev})
 
-
 @never_cache
 def event_view(request, event_id):
     eventsingular = event.objects.get(id=event_id)
     return render(request, 'sitewebapp/Event.html', {'eventsingular': eventsingular})
-
 
 @never_cache
 def members(request):

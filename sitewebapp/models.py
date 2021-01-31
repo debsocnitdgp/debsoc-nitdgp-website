@@ -23,6 +23,14 @@ ASTAT = (
     ('Selected', 'Selected'),
     ('Rejected', 'Rejected')
 )
+
+QTYPE = (
+    ('LONG', 'LONG'),
+    ('SMALL', 'SMALL'),
+    ('MCQ','MCQ')
+)
+
+
 class Members(models.Model):
     username = models.CharField(max_length=255)
     firstname = models.CharField(max_length=255)
@@ -117,6 +125,11 @@ class auditionQuestions(models.Model):
     serialno = models.IntegerField(default=1)
     question = models.CharField(max_length=5000)
     round = models.ForeignKey(auditionRounds, on_delete=models.CASCADE, related_name='round')
+    qtype = models.CharField(max_length=15, choices=QTYPE, default='LONG', null=True, blank=True)
+    op1 = models.CharField(max_length=5000, null=True, blank=True)
+    op2 = models.CharField(max_length=5000, null=True, blank=True)
+    op3 = models.CharField(max_length=5000, null=True, blank=True)
+    op4 = models.CharField(max_length=5000, null=True, blank=True)
 
     class Meta:
         unique_together = ('roundno', 'serialno',)
