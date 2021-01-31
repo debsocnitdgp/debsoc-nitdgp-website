@@ -30,10 +30,32 @@ canvas {
     <form method="POST">
         {% csrf_token %}
         {% for q in ques %}
+
+        {% if q.qtype == 'LONG' %}
         <div style="color: #fff; padding:0px 10px;">{{q.serialno}}. {{q.question}}</div>
         <div style="margin: 10px;">
         <textarea type="text" name="{{q.serialno}}" placeholder="Answer" class="form-control texta" autocomplete="off" styte="resize: none !important;" ></textarea>
         </div>
+        {% elif q.qtype == 'SMALL' %}
+        <div style="color: #fff; padding:0px 10px;">{{q.serialno}}. {{q.question}}</div>
+        <div style="margin: 10px;">
+        <input type="text" name="{{q.serialno}}" placeholder="Answer" class="form-control inputa" autocomplete="off" styte="resize: none !important;" ></input>
+        </div>
+        {% elif q.qtype == 'MCQ' %}
+        <div style="color: #fff; padding:0px 10px;">{{q.serialno}}. {{q.question}}</div>
+<div style="margin: 10px;">
+<select name="{{q.serialno}}" id="{{q.serialno}}" style="border-radius:4px; width:100%;  border: 1px solid #fff; height: 40px;  margin: 0 auto;">
+            <option>Choose From List</option>
+            <option class="optio" value="{{q.op1}}">{{q.op1}}</option>
+            <option class="optio" value="{{q.op2}}">{{q.op2}}</option>
+            <option class="optio" value="{{q.op3}}">{{q.op3}}</option>
+            <option class="optio" value="{{q.op4}}">{{q.op4}}</option>
+          </select> 
+          </div>
+          {% comment %} <input type="hidden" name="{{q.serialno}}" value={{q.serialno}}> {% endcomment %}
+
+        {% endif %}
+
         {% endfor %}
         <div style="width: 100%; display: flex; align-items: center; justify-content: center; padding-top:10px;">
         <button type="submit" class="btn btn-outline-light">Submit</button>
