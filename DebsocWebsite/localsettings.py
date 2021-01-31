@@ -175,6 +175,7 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 LOGIN_REDIRECT_URL='/Audition/'
+ACCOUNT_LOGOUT_ON_GET=True
 # CSRF_COOKIE_SECURE = True
 # SESSION_COOKIE_SECURE = True
 # Static files (CSS, JavaScript, Images)

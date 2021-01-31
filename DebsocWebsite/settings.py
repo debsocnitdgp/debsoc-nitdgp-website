@@ -186,6 +186,7 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 LOGIN_REDIRECT_URL='/Audition/'
+ACCOUNT_LOGOUT_ON_GET=True
 
 STATIC_URL = '/sitewebapp/static/'
 
