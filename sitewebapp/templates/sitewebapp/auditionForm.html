@@ -34,17 +34,17 @@ canvas {
         {% if q.qtype == 'LONG' %}
         <div style="color: #fff; padding:0px 10px;">{{q.serialno}}. {{q.question}}</div>
         <div style="margin: 10px;">
-        <textarea type="text" name="{{q.serialno}}" placeholder="Answer" class="form-control texta" autocomplete="off" styte="resize: none !important;" ></textarea>
+        <textarea required type="text" name="{{q.serialno}}" placeholder="Answer" class="form-control texta" autocomplete="off" styte="resize: none !important;" ></textarea>
         </div>
         {% elif q.qtype == 'SMALL' %}
         <div style="color: #fff; padding:0px 10px;">{{q.serialno}}. {{q.question}}</div>
         <div style="margin: 10px;">
-        <input type="text" name="{{q.serialno}}" placeholder="Answer" class="form-control inputa" autocomplete="off" styte="resize: none !important;" ></input>
+        <input required type="text" name="{{q.serialno}}" placeholder="Answer" class="form-control inputa" autocomplete="off" styte="resize: none !important;" ></input>
         </div>
         {% elif q.qtype == 'MCQ' %}
         <div style="color: #fff; padding:0px 10px;">{{q.serialno}}. {{q.question}}</div>
 <div style="margin: 10px;">
-<select name="{{q.serialno}}" id="{{q.serialno}}" style="border-radius:4px; width:100%;  border: 1px solid #fff; height: 40px;  margin: 0 auto;">
+<select required name="{{q.serialno}}" id="{{q.serialno}}" style="border-radius:4px; width:100%;  border: 1px solid #fff; height: 40px;  margin: 0 auto;">
             <option>Choose From List</option>
             <option class="optio" value="{{q.op1}}">{{q.op1}}</option>
             <option class="optio" value="{{q.op2}}">{{q.op2}}</option>
