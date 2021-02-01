@@ -19,6 +19,7 @@ urlpatterns = [
     path('AuditionHome/', views.auditionhome, name="auditionhome"),
     path('AuditionForm/', views.auditionform, name="auditionform"),
     path('showdata/<email>/', views.showdata, name="showdata"),
-    path('selected/', views.selectedCandidates, name="selectedList")
+    path('selected/', views.selectedCandidates, name="selectedList"),
+    path('responses/', views.responses, name="responses")
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

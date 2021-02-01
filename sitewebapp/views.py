@@ -213,4 +213,36 @@ def selectedCandidates(request):
 
     return response
 
+# @user_passes_test(lambda u: u.is_superuser)
+def responses(request):
+    response = HttpResponse(content_type = 'text/csv')
+
+
+    writer = csv.writer(response)
+    
+    cands =Candidates.objects.all()
+
+    for cand in cands:
+        writer.writerow((cand.name, cand.email))
+        for ans in auditionAnswers.objects.filter(ansby=cand):
+            rnd = ans.q.roundno 
+            no = ans.q.serialno
+            ques = ans.q.question
+            givenAns = ans.ans
+            time = ans.anstime
+            row1 = ('Questions:' ,rnd,no,ques)
+            row2 = ('Answer:','',time, givenAns)
+            writer.writerow(row1)
+            writer.writerow(row2)
+            writer.writerow([]) 
+        writer.writerow([]) 
+        writer.writerow([]) 
+        writer.writerow([]) 
+
+            
+    
+    response['Content-Disposition'] = 'attachment; filename = "Responses.csv"'
+
+    return response
+
 
