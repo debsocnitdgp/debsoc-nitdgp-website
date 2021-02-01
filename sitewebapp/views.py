@@ -213,7 +213,7 @@ def selectedCandidates(request):
 
     return response
 
-# @user_passes_test(lambda u: u.is_superuser)
+@user_passes_test(lambda u: u.is_superuser)
 def responses(request):
     response = HttpResponse(content_type = 'text/csv')
 
