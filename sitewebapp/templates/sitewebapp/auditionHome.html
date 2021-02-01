@@ -43,7 +43,9 @@ canvas {
 <a  href="{% url 'auditionform' %}">
       <button class="btnn" id="neon-text">  Attempt Questions</button>
     </a>
+    <div style="font-size:17px; text-transform:uppercase;" class="sign">No reattempts available in this round.</div>
 {% elif attempt == True %}
+<div style="font-size:17px; text-transform:uppercase;" class="sign">No reattempts available in this round.</div>
 <div style="font-size:17px; text-transform:uppercase;" class="sign">Attempted all current round questions</div>
 {% endif %}
 </div>
