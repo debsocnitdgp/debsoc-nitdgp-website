@@ -91,7 +91,14 @@ class event(models.Model):
         max_length=15, choices=MODE, default='Online')
     event_status = models.CharField(
         max_length=20, choices=STATUS, default='Past')
-    active = models.BooleanField(default=True)
+    active = models.BooleanField(default=True,max_length=50000)
+    text1 = models.CharField(blank=True, max_length= 20)
+    url1 = models.CharField(blank=True,max_length=500)
+    text2 = models.CharField(blank=True, max_length= 20)
+    url2 = models.CharField(blank=True,max_length=500)
+    text3 = models.CharField(blank=True, max_length= 20)
+    url3 = models.CharField(blank=True,max_length=500)
+
 
     class Meta:
         ordering = ['-event_datetime']
