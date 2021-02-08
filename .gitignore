@@ -1,2 +1,11 @@
 env
 .env
+
+bin
+lib
+bin/
+lib/
+
+pyvenv.cfg 
+
+.env.save 

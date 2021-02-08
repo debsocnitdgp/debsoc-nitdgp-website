@@ -101,6 +101,10 @@ def cmember(request):
         cform = MemberAddForm()
     return render(request, 'sitewebapp/cmember.html', {'cform':cform})
 
+@never_cache
+def apd2(request):
+    return render(request, 'sitewebapp/apd2.html')
+
 def handler404(request, exception):
     return HttpResponse("Wrong URL")
 
