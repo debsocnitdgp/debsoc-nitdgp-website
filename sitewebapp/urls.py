@@ -21,6 +21,7 @@ urlpatterns = [
     path('showdata/<email>/', views.showdata, name="showdata"),
     path('selected/', views.selectedCandidates, name="selectedList"),
     path('responses/', views.responses, name="responses"),
-    path('apd2/', views.apd2, name="apd2")
+    path('apd2/', views.apd2, name="apd2"),
+    path('blogc/',views.create_blog,name="cblog")
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

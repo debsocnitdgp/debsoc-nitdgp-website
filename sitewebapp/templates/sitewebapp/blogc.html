@@ -1,0 +1,5 @@
+<form class="form-horizontal form_middle" action="{% url 'cblog' %}" method="POST" enctype="multipart/form-data" style="text-align:center;">
+    {{ blogcreateform.as_p }}
+{% csrf_token %}
+<input type="submit" value='create'>
+</form>
