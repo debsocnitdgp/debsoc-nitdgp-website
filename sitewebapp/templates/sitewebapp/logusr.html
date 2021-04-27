@@ -1,4 +1,6 @@
 {% extends "sitewebapp/base.html" %} {% load static %} {% block content %}
+
+{% load socialaccount %}
 <style>
 body{
     background-color:#fff !important;
@@ -9,7 +11,7 @@ body{
     background-attachment: fixed;
 }
 .navbar, footer{
-    background-color: #cc0262 !important;
+    background-color: #007180; !important;
 }
 canvas {
   position: fixed;
@@ -22,52 +24,26 @@ canvas {
 </style>
 <div class="audi-wrap">
 <div style="width: 100%;text-align: center; display: flex; align-items: center; justify-content: center; margin: 30px auto;">
-  <div class="sign" style="display: block; width: 90%; max-width: 430px;text-align: center;font-size:35px; position: relative; margin: 0 auto;">
-     <span class="fast-flicker">deb</span>soc &nbsp;<span class="flicker">audi</span>tions 20<span class="fast-flicker">21</span>
+  <div class="sign" style="width: 90%; max-width: 430px;text-align: center;font-size:45px; position: relative;  margin: 0 auto; margin-top:30px;">
+      welcome to debsoc <br/>
     </div>
 </div>
-<div style="width: 95%; max-width: 500px; margin:0 auto; ">
-    <form method="POST">
-        {% csrf_token %}
-        {% for q in ques %}
+<div style="width: 100%;text-align: center; margin-bottom:120px; display: flex; align-items: center; justify-content: center;">
+<a href="{% provider_login_url "google" %}" >
+    <h4 class="btnn" id="neon-text" style="white-space: nowrap;">LOGIN WITH 
 
-        {% if q.qtype == 'LONG' %}
-        <div style="color: #fff; padding:0px 10px;">{{q.serialno}}. {{q.question}}</div>
-        <div style="margin: 10px;">
-        <textarea required type="text" name="{{q.serialno}}" placeholder="Answer" class="form-control texta" autocomplete="off" styte="resize: none !important;" ></textarea>
-        </div>
-        {% elif q.qtype == 'SMALL' %}
-        <div style="color: #fff; padding:0px 10px;">{{q.serialno}}. {{q.question}}</div>
-        <div style="margin: 10px;">
-        <input required type="text" name="{{q.serialno}}" placeholder="Answer" class="form-control inputa" autocomplete="off" styte="resize: none !important;" ></input>
-        </div>
-        {% elif q.qtype == 'MCQ' %}
-        <div style="color: #fff; padding:0px 10px;">{{q.serialno}}. {{q.question}}</div>
-<div style="margin: 10px;">
-<select required name="{{q.serialno}}" id="{{q.serialno}}" style="border-radius:4px; width:100%;  border: 1px solid #fff; height: 40px;  margin: 0 auto;">
-            <option>Choose From List</option>
-            <option class="optio" value="{{q.op1}}">{{q.op1}}</option>
-            <option class="optio" value="{{q.op2}}">{{q.op2}}</option>
-            <option class="optio" value="{{q.op3}}">{{q.op3}}</option>
-            <option class="optio" value="{{q.op4}}">{{q.op4}}</option>
-          </select> 
-          </div>
-          {% comment %} <input type="hidden" name="{{q.serialno}}" value={{q.serialno}}> {% endcomment %}
+<img src="{% static 'g.png' %}" alt="." style="height:35px;"/>
 
-        {% endif %}
-
-        {% endfor %}
-        <div style="width: 100%; display: flex; align-items: center; justify-content: center; padding-top:10px;">
-        <button type="submit" class="btn btn-outline-light">Submit</button>
-        </div>
-    </form>
+    </h4>
+</a>
 </div>
 </div>
 
 <script src="{% static 'js/three.min.js' %}"></script>
   <script src="{% static 'js/OrbitControls.js' %}"></script>
   <script src="{% static 'js/jquery.min.js' %}"></script>
-  <script> 
+  {% comment %} <script src="{% static 'js/contact.js' %}"></script> {% endcomment %}
+    <script> 
   $("#menu").on("mouseenter", function() {
 
     $("#menu").addClass('hovered');
