@@ -15,12 +15,8 @@ urlpatterns = [
     path('About/', views.about, name="about"),
     path('temp/', views.cmember, name="cmember"),
     path('accounts/', include('allauth.urls')),
-    path('Audition/', views.audition, name="audition"),
-    path('AuditionHome/', views.auditionhome, name="auditionhome"),
-    path('AuditionForm/', views.auditionform, name="auditionform"),
-    path('showdata/<email>/', views.showdata, name="showdata"),
-    path('selected/', views.selectedCandidates, name="selectedList"),
-    path('responses/', views.responses, name="responses"),
-    path('apd2/', views.apd2, name="apd2")
+    path('apd2/', views.apd2, name="apd2"),
+    path('blogc/',views.create_blog,name="cblog"),
+    path('logusr/',views.logusr,name='logusr'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
