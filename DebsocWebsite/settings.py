@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sitewebapp',
+    'audition',
     'cloudinary_storage',
     'cloudinary',
-
+    
     #For nested inlines
     'nested_inline',
 
