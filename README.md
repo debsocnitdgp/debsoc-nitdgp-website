@@ -7,12 +7,12 @@
   The Debating Society, Nit Durgapur
 </h1>
 
-![Django CI](https://github.com/rishav4101/debsocnitdWeb/workflows/Django%20CI/badge.svg)
-
+<p align="center">
 <a href="https://github.com/rishav4101/debsocnitdWeb/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/rishav4101/debsocnitdWeb"></a>
 <a href="https://github.com/rishav4101/debsocnitdWeb/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/rishav4101/debsocnitdWeb"></a>
 <a href="https://github.com/rishav4101/debsocnitdWeb/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/rishav4101/debsocnitdWeb"></a>
 <a href="https://github.com/rishav4101/debsocnitdWeb/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/rishav4101/debsocnitdWeb"></a>
+</p>
 
 ## Description
 
@@ -20,7 +20,7 @@ The official website of Debating Society, Nit Durgapur. Built with [Django](http
 
 ## Project status
 
-Under Development. Visit [http://debsocnitd.herokuapp.com](http://debsocnitd.herokuapp.com).
+Live. Visit at [http://www.debsocnitdgp.in](http://www.debsocnitdgp.in).
 
 ## Application is dockerized
 
