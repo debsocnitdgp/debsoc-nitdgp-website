@@ -18,5 +18,7 @@ urlpatterns = [
     path('apd2/', views.apd2, name="apd2"),
     path('blogc/',views.create_blog,name="cblog"),
     path('logusr/',views.logusr,name='logusr'),
+    path('adsdsd/',views.alumniadd,name='alumniadd'),
+    path('Alumni/',views.view_alumni,name='alumni'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

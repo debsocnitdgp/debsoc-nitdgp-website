@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404, reverse, rende
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect, JsonResponse
 from .models import *
 from django.db.models import Count
-from .forms import CommentForm, MemberAddForm, blogcform
+from .forms import CommentForm, MemberAddForm, blogcform,alumniform
 from django.utils import timezone
 from django.views.decorators.cache import cache_control, never_cache
 from django.contrib.auth.decorators import login_required
@@ -131,3 +131,25 @@ def logusr(request):
     return render(request,'sitewebapp/logusr.html')
 
 
+def alumniadd(request):
+    if request.method=="POST":
+        e=Alumni.objects.all()
+        if e:        
+            no=e.count()
+        else:
+            no=0
+        form=alumniform(request.POST)
+        if form.is_valid():
+            f=form.save(commit=False)
+            f.sno=no
+           ### print(f.firstname,f.lastname,f.batch,f.facebook_url,f.instagram_url)
+            f.save()
+            return redirect('alumni/')
+    else:
+        form=alumniform()
+        return render(request,'sitewebapp/profile.html',{'form':form})
+
+
+def view_alumni(request):
+    alm=Alumni.objects.all().order_by('id')
+    return render(request,'sitewebapp/alumni.html',{'alm':alm})

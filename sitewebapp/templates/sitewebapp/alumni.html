@@ -1,0 +1,341 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>Debsocnitdgp</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis:wght@500&family=Quicksand:wght@500&display=swap"
+      rel="stylesheet">
+    <link rel="icon" type="png" href="{% static 'debsoclogo.e1a1a46388b6.png' %}">
+    <link rel="stylesheet" href="{% static 'mdb.min.cac05615e9df.css' %}">
+    <link rel="stylesheet" href="{% static 'profile_card.1244394c79c1.css' %}">
+    <link rel="stylesheet" href="{% static 'preloader.0938db83259a.css' %}">
+    <style>
+      body {
+        overflow: -moz-scrollbars-none;
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        font-family: "Quicksand", sans-serif;
+      }
+      body::-webkit-scrollbar {
+        display: none;
+      }
+
+      .card {
+        background-color: #007180;
+        color: #fff;
+      }
+      .headbox {
+        width: 300px;
+        margin: 10px auto;
+        margin-top: 50px;
+        padding: 5px;
+        border-top: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+      }
+      .heading {
+        text-transform: uppercase;
+        font-family: "Bebas Neue", cursive;
+        font-size: 32px;
+        text-align: center;
+        color: #fff;
+      }
+      .navbar-brand {
+        margin: 0px;
+        padding: 0px;
+        font-size: 26px;
+        font-family: "Bebas Neue", cursive;
+        color: #fff;
+      }
+      .navbar-toggler {
+        margin-right: 0;
+        padding: 0;
+      }
+    </style>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Bootstrap -->
+    <!-- <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+      rel="stylesheet"
+    /> -->
+    <!-- Material Design for Bootstrap -->
+    <!-- <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.16/css/mdb.min.css"
+      rel="stylesheet"
+    /> -->
+  </head>
+
+  <body style="background-color: #000;" >
+    <div id="loading">
+      <img class="img-fluid" src="{% static 'DEBSOClogowhitePNG.5b5ef25bdefa.png' %}" />
+    </div>
+    <!--Navbar-->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark sticky-top"
+      style="
+        background-color: #007180;
+        box-shadow: 0px 6px 9px #000;
+        text-align: center;
+      "
+    >
+      <div class="container-fluid">
+        <a href="/">
+        <img
+          class="img-fluid"
+          style="width: 27px;"
+          src="{% static 'DEBSOClogowhitePNG.5b5ef25bdefa.png' %}"
+        />
+        </a>
+        <a href="/"><h2
+          style="text-align: center;"
+          class="navbar-brand"
+          style="font-family: 'Bebas Neue', cursive;"
+        >
+          &nbsp;&nbsp;&nbsp;&nbsp;The Debating Society&nbsp;&nbsp;&nbsp;&nbsp;
+        </h2></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarColor02"
+          aria-controls="navbarColor02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor02">
+          <ul
+            class="navbar-nav mr-auto mb-2 mb-lg-0"
+            style="text-align: center;"
+          >
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="/"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Events/">Events</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="/Blogs/">Blog</a>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link" href="/Members/">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/About/">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--Navbar Ended-->
+
+    
+<div class="container">
+  <div class="headbox">
+    <h1 class="heading">Our ALUMNI</h1>
+  </div>
+  <div
+    style="padding: 7px;"
+    data-toggle="animation"
+    data-animateonscroll="repeat"
+    data-animation="zoomIn"
+    class="fa-1x slow"
+  >
+    <div style="color: #fff;">
+      <div style="margin: 10px auto; max-width: 1100px; text-align: center;">
+        <p>
+          The Debating Society, NIT Durgapur, is extremely proud of its alumni, who are well-known for their extensive knowledge in a wide range of subjects, their way of thinking from every rational perspective, and their ability to speak their minds so proficiently. They have triumphed over every adversity and overcome unprecedented circumstances to make this club a spectacular success. Our alumni have not only helped to propel the club to new heights, but they have also excelled in their professional lives. From excellent academic performance to being confident people in their social ties, they have all managed to become effective leaders and an example to each and every student onboard. Our alumni is our greatest source of motivation, which has constantly encouraged us to promote our club's ideology of fostering healthy debating skills in the youth.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+  <h1 class="heading" style="margin-top:20px;">ALUMNI</h1>
+   {% for i in alm %} 
+    <div class="col-md">
+      <div
+        class="our-team"
+        style="width: 250px; margin: 20px auto;"
+        data-toggle="animation"
+        data-animateonscroll="repeat"
+        data-animation="zoomIn"
+        class="fa-1x slow"
+      >
+        <div class="picture">
+          
+          <img class="img-fluid" src="{{ i.propic }}" />
+          
+        </div>
+        <div class="team-content">
+          <h3 class="name">{{ i.firstname }}</h3>
+          <h4 class="title"></h4>
+        </div>
+        <ul class="social">
+          <li>
+            <a
+              href="{{ i.facebook_url }}"
+              class="fa fa-facebook"
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="{{ i.instagram_url }}"
+              class="fa fa-instagram"
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="{{ i.linkedin_url }}"
+              class="fa fa-linkedin"
+              aria-hidden="true"
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  {% endfor %}
+    
+
+</div>
+
+
+    <footer class="text-white" style="background-color: #007180;">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row" style="margin: 20px;">
+          <!--Grid column-->
+          <div
+            class="col-md-8 col-xs-12"
+            style="
+              text-align: center;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <div>
+              <h5 class="text-uppercase">CONTACT US</h5>
+
+              <p>
+                You can reach us out at any time. <br />
+                Email us at: <a>debatingsociety.nitdgp@gmail.com</a> <br />
+                Call or message us at: 8017449727
+              </p>
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <!-- <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-white">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 4</a>
+              </li>
+            </ul>
+          </div> -->
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div
+            class="col-md-4 col-xs-12"
+            style="
+              text-align: center;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <div>
+              <h5 class="text-uppercase">VISIT US AT</h5>
+
+              <ul class="list-unstyled">
+                  &nbsp;&nbsp;
+                  <a href="https://www.facebook.com/debatingsociety3103.nitd/" class="fa fa-facebook text-white" aria-hidden="true" style="font-size: 21px;"></a>
+                  &nbsp;&nbsp;
+                  <a href="https://www.instagram.com/debsocnitd/" class="fa fa-instagram text-white" aria-hidden="true" style="font-size: 21px;"></a>
+                  &nbsp;&nbsp;
+                  <a href="https://www.linkedin.com/company/debating-society-nit-durgapur/about/" class="fa fa-linkedin text-white" aria-hidden="true" style="font-size: 21px;"></a>
+                  &nbsp;&nbsp;
+              </ul>
+            </div>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div
+        class="text-center p-3"
+        style="
+          background-color: rgba(0, 0, 0, 0.2);
+          color: rgba(255, 255, 255, 0.6);
+        "
+      >
+        © 2020 Copyright:
+        <a class="text-white" href="/"> Debsocnitdgp</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+    <!-- jQuery -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+    <!-- Popper.js -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script> -->
+
+    <!-- Bootstrap -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script> -->
+
+    <!-- Material Design for Bootstrap -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.16/js/mdb.min.js"></script> -->
+    <script src="/static/js/mdb.min.483b4d53a188.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      // $(document).ready(function(){
+      // 	$('div#loading').removeAttr('id');
+      // });
+      //var preloader = document.getElementById("loading");
+      // window.addEventListener('load', function(){
+      // 	preloader.style.display = 'none';
+      // 	})
+
+      // function myFunction() {
+      //   preloader.style.display = "none";
+      // }
+      $(window).load(function () {
+        setTimeout(function () {
+          $("#loading").fadeOut("slow");
+        }, 800);
+      });
+    </script>
+  </body>
+</html>
