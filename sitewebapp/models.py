@@ -159,3 +159,14 @@ class auditionAnswers(models.Model):
 
 
 
+class Alumni(models.Model):
+    firstname = models.CharField(max_length=255)
+    lastname = models.CharField(max_length=255)
+    email = models.EmailField(max_length=254)
+    batch = models.CharField(max_length=10,default='2017')
+    sno = models.IntegerField(blank=True, null =True)
+    propic= models.URLField(max_length=500,blank=True,null=True)
+    facebook_url = models.URLField(max_length=300, null=True, blank=True)
+    instagram_url = models.URLField(max_length=300, null=True, blank=True)
+    linkedin_url = models.URLField(max_length=300, null=True, blank=True)
+    

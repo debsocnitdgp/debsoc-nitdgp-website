@@ -1,0 +1,75 @@
+{% extends "sitewebapp/base.html" %} {% block content %}
+<div class="container">
+  <div class="headbox">
+    <h1 class="heading">Alumni</h1>
+  </div>
+  <div
+    style="padding: 7px;"
+    data-toggle="animation"
+    data-animateonscroll="repeat"
+    data-animation="zoomIn"
+    class="fa-1x slow"
+  >
+    <div style="color: #fff;">
+      <div style="margin: 10px auto; max-width: 1100px; text-align: center;">
+        <p>
+          The Debating Society, NIT Durgapur, is extremely proud of its alumni, who are well-known for their extensive knowledge in a wide range of subjects, their way of thinking from every rational perspective, and their ability to speak their minds so proficiently. They have triumphed over every adversity and overcome unprecedented circumstances to make this club a spectacular success. Our alumni have not only helped to propel the club to new heights, but they have also excelled in their professional lives. From excellent academic performance to being confident people in their social ties, they have all managed to become effective leaders and an example to each and every student onboard. Our alumni is our greatest source of motivation, which has constantly encouraged us to promote our club's ideology of fostering healthy debating skills in the youth.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+    {% for o in m %}
+    <div style="width:70%; height:3px; background-color:#fff; margin: 20px auto;"></div>
+    <div class="row">
+    <h1 class="heading" style="margin-top:20px;">Batch: {{ o }}</h1>
+    {% for i in alm %}
+    {% if i.batch == o %}
+    <div class="col-md">
+      <div
+        class="our-team"
+        style="width: 250px; margin: 20px auto;"
+        data-toggle="animation"
+        data-animateonscroll="repeat"
+        data-animation="zoomIn"
+        class="fa-1x slow"
+      >
+        <div class="picture">
+          <img class="img-fluid" src="{{ i.propic }}">
+        </div>
+        <div class="team-content">
+          <h3 class="name">{{i.firstname}}</h3>
+          <h4 class="title">Alumni</h4>
+        </div>
+        <ul class="social">
+          <li>
+            <a
+              href="{{i.facebook_url}}"
+              class="fa fa-facebook"
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="{{i.instagram_url}}"
+              class="fa fa-instagram"
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="{{i.linkedin_url}}"
+              class="fa fa-linkedin"
+              aria-hidden="true"
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  {% endfor %}
+</div>
+{%endblock%}

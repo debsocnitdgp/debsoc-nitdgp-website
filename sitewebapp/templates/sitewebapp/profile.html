@@ -1,0 +1,219 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Profile - Brand</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/Navigation-Clean.css' %}">
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <div class="container-fluid">
+                    <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+                        <div class="container"><a class="navbar-brand" data-bss-hover-animate="tada" href="#" style="font-size: 29px;color: #37434d;">Debsoc Alumni</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                            <div class="collapse navbar-collapse" id="navcol-1">
+                                <ul class="navbar-nav ms-auto">
+                                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Alumni</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/admin">Settings</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <h3 class="text-dark mb-4">Profile</h3>
+                    <div class="row mb-3">
+                        <div class="col-lg-4">
+                            <div class="card mb-3">
+                                <div class="card-body text-center shadow" style="height: 600px;padding-top: 147px;">
+                                    <div class="mb-3"></div><img id="profilepicture" class="rounded-circle mb-3 mt-4" src="{% static 'assets/img/dogs/debsoc.png' %}" width="160" height="160" style="filter: sepia(0%);transform: scale(0.97);border-style: solid;"><button id="upload_widget" class="btn btn-primary btn-sm" type="button">Change Photo</button>
+                                </div>
+                            </div>
+                        </div>
+                        <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
+                        <script>
+var obj;
+var u;
+var myWidget = cloudinary.createUploadWidget({
+  cloudName: 'paulserver', 
+  uploadPreset: 'qjwb2yvf'}, (error, result) => { 
+    if (!error && result && result.event === "success") { 
+      console.log('Done! Here is the image info: ', result.info); 
+      u=result.info.secure_url;
+      document.getElementById("profilepicture").src=u;
+      //console.log(1);
+      //document.getElementById("ip1").value=result.info.secure_url;
+      //document.getElementById("ip2").value=result.info.resource_type;
+      //console.log(document.getElementById("ip1").value);
+      //console.log(result.info.resource_type);
+    //  document.getElementById("saveform").submit();
+    }
+  }
+)
+
+
+
+document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+  }, false);
+                        </script>
+                        <div class="col-lg-8">
+                            <div class="row mb-3 d-none">
+                                <div class="col">
+                                    <div class="card textwhite bg-primary text-white shadow">
+                                        <div class="card-body">
+                                            <div class="row mb-2">
+                                                <div class="col">
+                                                    <p class="m-0">Peformance</p>
+                                                    <p class="m-0"><strong>65.2%</strong></p>
+                                                </div>
+                                                <div class="col-auto"><i class="fas fa-rocket fa-2x"></i></div>
+                                            </div>
+                                            <p class="text-white-50 small m-0"><i class="fas fa-arrow-up"></i>&nbsp;5% since last month</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card textwhite bg-success text-white shadow">
+                                        <div class="card-body">
+                                            <div class="row mb-2">
+                                                <div class="col">
+                                                    <p class="m-0">Peformance</p>
+                                                    <p class="m-0"><strong>65.2%</strong></p>
+                                                </div>
+                                                <div class="col-auto"><i class="fas fa-rocket fa-2x"></i></div>
+                                            </div>
+                                            <p class="text-white-50 small m-0"><i class="fas fa-arrow-up"></i>&nbsp;5% since last month</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card shadow mb-3">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary m-0 fw-bold">User Settings</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <form>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label" for="username"><strong>Batch</strong><br></label><input class="form-control" type="text" id="batchprox" placeholder="batch" name="username"></div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label" for="email"><strong>Email Address</strong></label><input class="form-control" type="email" id="emailprox" placeholder="user@example.com" name="email"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label" for="first_name"><strong>First Name</strong></label><input class="form-control" type="text" id="first_nameprox" placeholder="John" name="first_name"></div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label" for="last_name"><strong>Last Name</strong></label><input class="form-control" type="text" id="last_nameprox" placeholder="Doe" name="last_name"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3"></div>
+                                            </form><button style="cursor: not-allowed;" class="btn btn-primary btn-sm" type="submit" disabled>Save Settings</button>
+                                        </div>
+                                    </div>
+                                    <div class="card shadow">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary m-0 fw-bold">Socials</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <form>
+                                                <div class="mb-3"><label class="form-label" for="address"><strong>Facebook</strong><br></label><input class="form-control" type="text" id="fbproxy" placeholder="fb id" name="address"></div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label" for="city"><strong>Linkedln</strong><br></label><input class="form-control" type="text" id="linkproxy" placeholder="Linkedln id" name="linkedin_url"></div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label" for="country"><strong>Instagram</strong><br></label><input class="form-control" type="text" id="instaproxy" placeholder="ID" name="country"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3"></div>
+                                            </form><button style="cursor: not-allowed;" class="btn btn-primary btn-sm" type="submit" disabled>Save&nbsp;Settings</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow mb-5">
+                        <div class="card-header py-3">
+                            <p class="text-primary m-0 fw-bold">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Add profile</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form>
+                                        <div class="mb-3"></div>
+                                        <div class="mb-3"></div>
+                                        <div class="mb-3"><button class="btn btn-primary btn-sm" onclick="saveo();return false;">Save Settings</button></div>
+                                    </form>
+                                </div>
+                                <div class="col"><small>Add the alumni profile to database ,please click save settings if you wish to confirm</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright © Debsoc Backend Team</span></div>
+                </div>
+            </footer>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/bs-init.js' %}"></script>
+    <script src="{% static 'assets/js/theme.js' %}"></script>
+    <form id="maindata" action="{% url 'alumniadd' %}" method="POST" enctype="multipart/form-data">
+        <input id="firstname" name="firstname" type="hidden">
+        {% csrf_token %}
+        <input id="lastname" name="lastname" type="hidden">
+        <input id="email" name="email" type="hidden">
+        <input id="batch" name="batch" type="hidden">
+        <input id="propic" name="propic" type="hidden">
+        <input id="facebook_url" name="facebook_url" type="hidden">
+        <input id="instagram_url" name="instagram_url" type="hidden">
+        <input id="linkedin_url" name="linkedin_url" type="hidden">
+    </form>
+    <script>
+        
+        function saveo()
+        {
+            var batch,email,first,last,link,fb,insta,img;
+            console.log('a');
+batch=document.getElementById("batchprox").value;
+email=document.getElementById("emailprox").value;
+first=document.getElementById("first_nameprox").value;
+last=document.getElementById("last_nameprox").value;
+fb=document.getElementById("fbproxy").value;
+link=document.getElementById("linkproxy").value;
+insta=document.getElementById("instaproxy").value;
+console.log(batch,email,first,last,link,fb,insta);
+document.getElementById("firstname").value=first;
+document.getElementById("lastname").value=last;
+document.getElementById("batch").value=batch;
+document.getElementById("facebook_url").value=fb;
+document.getElementById("instagram_url").value=insta;
+document.getElementById("linkedin_url").value=link;
+document.getElementById("email").value=email;
+img=document.getElementById("profilepicture").src;
+console.log(img,document.getElementById("email").value,document.getElementById("firstname").value);
+document.getElementById("propic").value=img;
+document.getElementById("maindata").submit();
+        }
+    </script>
+</body>
+
+</html>
