@@ -144,12 +144,23 @@ def alumniadd(request):
             f.sno=no
            ### print(f.firstname,f.lastname,f.batch,f.facebook_url,f.instagram_url)
             f.save()
-            return redirect('alumni/')
+            return redirect('../Alumni/')
     else:
         form=alumniform()
         return render(request,'sitewebapp/profile.html',{'form':form})
 
 
 def view_alumni(request):
-    alm=Alumni.objects.all().order_by('id')
-    return render(request,'sitewebapp/alumni.html',{'alm':alm})
+    alm=Alumni.objects.all().order_by('batch')
+    o=[]
+    j='2000'
+    m=[]
+    for i in alm:
+        if i.batch!=j:
+            j=i.batch
+            m.append(j)
+            o.append(i)
+        else :
+            o.append(i)
+        
+    return render(request,'sitewebapp/alumni.html',{'alm':o,'m':m})
