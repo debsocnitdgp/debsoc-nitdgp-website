@@ -5,11 +5,12 @@
     alt="..."
     style="
       margin: 0 auto;
-      height: auto;
+      height: 100%;
       max-width: 500px;
+
       width: 95%;
       border-radius: 8px;
-      box-shadow: 6px 6px 9px #000;
+      box-shadow: 6px 6px 9px rgb(20, 20, 20);
     "
     data-toggle="animation"
     data-animateonscroll="repeat"
@@ -68,6 +69,7 @@
 </div>
 {% for comment in post.comments.all %}
 <div style="margin: 20px;">
+  
   <div
     class="card"
     style="
@@ -75,7 +77,7 @@
       margin: 20px auto;
       max-width: 800px;
       background-color: #eee;
-      border-bottom: 11px solid #007180;
+      border-bottom: 11px solid #fff;
       box-shadow: 6px 6px 9px #000;
       border-radius: 8px;
     "

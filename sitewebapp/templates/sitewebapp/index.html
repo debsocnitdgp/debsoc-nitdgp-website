@@ -12,7 +12,7 @@
       max-width: 1100px;
       box-shadow: 2px 2px 4px #000;
       border-radius: 0px;
-      background-color: #007180;
+      background-color: #a30338;
     "
   >
     <!-- Indicators -->
@@ -96,7 +96,7 @@
 
 <div style="margin: 0;">
   <div class="row">
-    <div class="card" style="background-color: #007180; color: #fff;">
+    <div class="card" style="background-color: #a30338; color: #fff;">
       <div
         class="card-body"
         style="margin: 10px auto; max-width: 1100px; text-align: center;"
@@ -123,7 +123,7 @@
   </div>
   <div style="padding: 7px;">
     <div style="color: #fff;">
-      <div style="margin: 10px auto; max-width: 1100px; text-align: center;">
+      <div style="margin: 10px auto; max-width: 1100px; text-align: center; ">
         <p data-toggle="animation"
         data-animateonscroll="repeat"
         data-animation="fadeInRight"
@@ -142,7 +142,6 @@
         style="
           width: 350px;
           margin: 20px auto;
-
           box-shadow: 3px 3px 4px #000;
           border-radius: 8px;
         "
@@ -152,7 +151,8 @@
         class="fa-1x slow"
       >
         {% if i.poster %}
-        <img src="{{ i.poster.url }}" class="card-img-top" alt="..." />
+        <img src="{{ i.poster.url }}" class="card-img-top" alt="..."
+        style="object-fit: cover; height: 300px;" />
         {% endif %}
         <div class="card-body">
           <h5 class="card-title">{{i.event_name}}</h5>
@@ -200,7 +200,7 @@
 </div>
 <div style="margin: 0;">
   <div class="row">
-    <div class="card" style="background-color: #007180; color: #fff;">
+    <div class="card" style="background-color: #a30338; color: #fff;">
       <div
         class="card-body"
         style="margin: 10px auto; max-width: 1100px; text-align: center;"
@@ -231,10 +231,8 @@
     <div class="col-md">
       <div class="card" style="width: 350px; margin: 20px auto;">
         <img
-          src="{{i.image_url}}"
-          class="card-img-top"
-          alt="..."
-        />
+          src="{{i.image_url}}" class="card-img-top" alt="..."
+          style="object-fit: cover; height: 200px;"/>
         <div class="card-body">
           <p>{{i.title}}</p>
           <p>{{i.created_on}}</p>
