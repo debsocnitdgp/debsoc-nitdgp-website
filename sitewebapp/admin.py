@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Members, blog, Comments, event
+from .models import Alumni, Members, blog, Comments, event
 from nested_inline.admin import NestedStackedInline, NestedModelAdmin 
 # Register your models here.
 
@@ -19,3 +19,4 @@ class blogAdmin(admin.ModelAdmin):
 admin.site.register(blog, blogAdmin)
 admin.site.register(Members)
 admin.site.register(event)
+admin.site.register(Alumni)

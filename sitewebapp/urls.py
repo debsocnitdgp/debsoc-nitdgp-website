@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    path('', views.index, name="index"),
+    path('',views.index, name="index"),
     path('Blogs/', views.blog_home, name="blog_home"),
     path('Blogs/<int:blog_id>/', views.blog_view, name="blog_view"),
     path('Events/', views.event_home, name="event_home"),
@@ -18,5 +18,7 @@ urlpatterns = [
     path('apd2/', views.apd2, name="apd2"),
     path('blogc/',views.create_blog,name="cblog"),
     path('logusr/',views.logusr,name='logusr'),
+    path('adsdsd/',views.alumniadd,name='alumniadd'),
+    path('Alumni/',views.view_alumni,name='alumni'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

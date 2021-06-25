@@ -1,155 +1,7 @@
-{% block content %}
-<!-- Content Goes here -->
-
-<!DOCTYPE html>
-
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no" />
-    <title>Debsocnitdgp</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis:wght@500&family=Quicksand:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="png" href="debsoclogo.e1a1a46388b6.png" />
-    <link rel="stylesheet" href="mdb.min.cac05615e9df.css" />
-    <link rel="stylesheet" href="profile_card.1244394c79c1.css" />
-    <link rel="stylesheet" href="preloader.0938db83259a.css" />
-    <style>
-      body {
-        overflow: -moz-scrollbars-none;
-        height: 100%;
-        width: 100%;
-        overflow-x: hidden;
-        font-family: "Quicksand", sans-serif;
-      }
-      body::-webkit-scrollbar {
-        display: none;
-      }
-
-      .card {
-        background-color: #ff0157;
-        color: #fff;
-      }
-      .headbox {
-        width: 300px;
-        margin: 10px auto;
-        margin-top: 50px;
-        padding: 5px;
-        border-top: 2px solid #fff;
-        border-bottom: 2px solid #fff;
-      }
-      .heading {
-        text-transform: uppercase;
-        font-family: "Bebas Neue", cursive;
-        font-size: 32px;
-        text-align: center;
-        color: #fff;
-      }
-      .navbar-brand {
-        margin: 0px;
-        padding: 0px;
-        font-size: 26px;
-        font-family: "Bebas Neue", cursive;
-        color: #fff;
-      }
-      .navbar-toggler {
-        margin-right: 0;
-        padding: 0;
-      }
-    </style>
-
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <!-- Bootstrap -->
-    <!-- <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
-      rel="stylesheet"
-    /> -->
-    <!-- Material Design for Bootstrap -->
-    <!-- <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.16/css/mdb.min.css"
-      rel="stylesheet"
-    /> -->
-  </head>
-
-  <body style="background-color: #000000;
-  background-image: linear-gradient(315deg, #000000 0%, #1a1a1a 74%);">
-    <div id="loading">
-      <img class="img-fluid" src="DEBSOClogowhitePNG.5b5ef25bdefa.png" />
-    </div>
-    <!--Navbar-->
-    <nav
-      class="navbar navbar-expand-lg navbar-dark sticky-top"
-      style="
-        background-color: 		#a30338;
-        box-shadow: 0px 6px 9px #000;
-        text-align: center;
-      "
-    >
-      <div class="container-fluid">
-        <a href="/">
-        <img
-          class="img-fluid"
-          style="width: 27px;"
-          src="DEBSOClogowhitePNG.5b5ef25bdefa.png"
-        />
-        </a>
-        <a href="/"><h2
-          style="text-align: center; "
-          class="navbar-brand"
-          style="font-family: 'Bebas Neue', cursive;"
-
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;The Debating Society&nbsp;&nbsp;&nbsp;&nbsp;
-        </h2></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarColor02"
-          aria-controls="navbarColor02"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarColor02">
-          <ul
-            class="navbar-nav mr-auto mb-2 mb-lg-0"
-            style="text-align: center;"
-          >
-            <li class="nav-item active">
-              <a class="nav-link"  aria-current="page" href="/"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link"   href="/Events/">Events</a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link"   href="/Blogs/">Blog</a>
-            </li> 
-            <li class="nav-item">
-              <a class="nav-link"    href="/Members/">Team</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link"   href="/About/">About</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <!--Navbar Ended-->
-
-    
+{% extends "sitewebapp/base.html" %} {% block content %}
 <div class="container">
   <div class="headbox">
-    <h1 class="heading" style="color: #a30338;" >Our ALUMNI</h1>
+    <h1 class="heading">Alumni</h1>
   </div>
   <div
     style="padding: 7px;"
@@ -158,31 +10,22 @@
     data-animation="zoomIn"
     class="fa-1x slow"
   >
-    <div style="color: rgb(235, 235, 235)">
-      <div style="margin: 12px auto; max-width: 1100px; text-align: center;">
+    <div style="color: #fff;">
+      <div style="margin: 10px auto; max-width: 1100px; text-align: center;">
         <p>
-          The Debating Society, NIT Durgapur, is an ardent believer of a
-          wholesome development where students would actively involve themselves
-          in issues concerning social interest and upsurge. As responsible
-          citizens, we feel the importance to amplify voices when the nation
-          requires our support and opinions. We look forward to participation
-          from the youth wing with solutions to the massive lockjaws with
-          intellect, humanity and feasibility. Each consecutive step of our club
-          attempts to bring a stir towards positive outcomes in the society and
-          provide a platform to creative ideologies piloting progress. We
-          believe the youth of the hour can bring a change towards positivity
-          and stability only when we are vigilant, receptive and equally
-          responsive in raising our voices and directing our thought processes
-          towards the present issues concerning the society.
+          The Debating Society, NIT Durgapur, is extremely proud of its alumni, who are well-known for their extensive knowledge in a wide range of subjects, their way of thinking from every rational perspective, and their ability to speak their minds so proficiently. They have triumphed over every adversity and overcome unprecedented circumstances to make this club a spectacular success. Our alumni have not only helped to propel the club to new heights, but they have also excelled in their professional lives. From excellent academic performance to being confident people in their social ties, they have all managed to become effective leaders and an example to each and every student onboard. Our alumni is our greatest source of motivation, which has constantly encouraged us to promote our club's ideology of fostering healthy debating skills in the youth.
         </p>
       </div>
     </div>
   </div>
-  <div class="row">
-  
-  <h1 class="heading" style="margin-top:10px;color: #a30338; ">BATCH OF 2021</h1>
 
-    
+
+    {% for o in m %}
+    <div style="width:70%; height:3px; background-color:#fff; margin: 20px auto;"></div>
+    <div class="row">
+    <h1 class="heading" style="margin-top:20px;">Batch: {{ o }}</h1>
+    {% for i in alm %}
+    {% if i.batch == o %}
     <div class="col-md">
       <div
         class="our-team"
@@ -193,32 +36,30 @@
         class="fa-1x slow"
       >
         <div class="picture">
-          
-          <img class="img-fluid" src="https://res.cloudinary.com/hdqtmtoze/image/upload/v1/media/memberDPs/WhatsApp_Image_2020-06-21_at_02.11.51_arbj8k" />
-          
+          <img class="img-fluid" src="{{ i.propic }}">
         </div>
         <div class="team-content">
-          <h3 class="name">Mahima</h3>
-          <h4 class="title"></h4>
+          <h3 class="name">{{i.firstname}}</h3>
+          <h4 class="title">Alumni</h4>
         </div>
         <ul class="social">
           <li>
             <a
-              href="https://www.facebook.com/mahima.kriti"
+              href="{{i.facebook_url}}"
               class="fa fa-facebook"
               aria-hidden="true"
             ></a>
           </li>
           <li>
             <a
-              href="https://instagram.com/___the_arana__?igshid=nast1930y1s9"
+              href="{{i.instagram_url}}"
               class="fa fa-instagram"
               aria-hidden="true"
             ></a>
           </li>
           <li>
             <a
-              href="None"
+              href="{{i.linkedin_url}}"
               class="fa fa-linkedin"
               aria-hidden="true"
             ></a>
@@ -226,361 +67,9 @@
         </ul>
       </div>
     </div>
-    
-    <div class="col-md">
-      <div
-        class="our-team"
-        style="width: 250px; margin: 20px auto;"
-        data-toggle="animation"
-        data-animateonscroll="repeat"
-        data-animation="zoomIn"
-        class="fa-1x slow"
-      >
-        <div class="picture">
-          
-          <img class="img-fluid" src="https://res.cloudinary.com/hdqtmtoze/image/upload/v1/media/memberDPs/E36347B9-9016-488C-A829-EBDF572F0947_fiupga" />
-          
-        </div>
-        <div class="team-content">
-          <h3 class="name">Sarah</h3>
-          <h4 class="title"></h4>
-        </div>
-        <ul class="social">
-          <li>
-            <a
-              href="https://www.facebook.com/profile.php?id=100020946188153"
-              class="fa fa-facebook"
-              aria-hidden="true"
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://instagram.com/_sarah_mars?igshid=qev9zuh08xhi"
-              class="fa fa-instagram"
-              aria-hidden="true"
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/sarah-baitullah/"
-              class="fa fa-linkedin"
-              aria-hidden="true"
-            ></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="col-md">
-      <div
-        class="our-team"
-        style="width: 250px; margin: 20px auto;"
-        data-toggle="animation"
-        data-animateonscroll="repeat"
-        data-animation="zoomIn"
-        class="fa-1x slow"
-      >
-        <div class="picture">
-          
-          <img class="img-fluid" src="https://res.cloudinary.com/hdqtmtoze/image/upload/v1/media/memberDPs/IMG_20200509_104546_166_qiwpa5" />
-          
-        </div>
-        <div class="team-content">
-          <h3 class="name">Clan</h3>
-          <h4 class="title"></h4>
-        </div>
-        <ul class="social">
-          <li>
-            <a
-              href="https://www.facebook.com/ClanAbyPhilip"
-              class="fa fa-facebook"
-              aria-hidden="true"
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/clan_aby_philip"
-              class="fa fa-instagram"
-              aria-hidden="true"
-            ></a>
-          </li>
-          <li>
-            <a
-              href="None"
-              class="fa fa-linkedin"
-              aria-hidden="true"
-            ></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="col-md">
-      <div
-        class="our-team"
-        style="width: 250px; margin: 20px auto;"
-        data-toggle="animation"
-        data-animateonscroll="repeat"
-        data-animation="zoomIn"
-        class="fa-1x slow"
-      >
-        <div class="picture">
-          
-          <img class="img-fluid" src="https://res.cloudinary.com/hdqtmtoze/image/upload/v1/media/memberDPs/SUDEEPTA_square__rxkrsv" />
-          
-        </div>
-        <div class="team-content">
-          <h3 class="name">Sudeepta</h3>
-          <h4 class="title"></h4>
-        </div>
-        <ul class="social">
-          <li>
-            <a
-              href="https://www.facebook.com/profile.php?id=100008628999716"
-              class="fa fa-facebook"
-              aria-hidden="true"
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/sudeepta_gorai/?fbclid=IwAR1vgtYYMuE_ehoLc3V-QNmDVEe82PqwZfgyozQGcFRR2RDN217KBHaA6ec"
-              class="fa fa-instagram"
-              aria-hidden="true"
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/sudeepta-gorai-358b18147"
-              class="fa fa-linkedin"
-              aria-hidden="true"
-            ></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="col-md">
-      <div
-        class="our-team"
-        style="width: 250px; margin: 20px auto;"
-        data-toggle="animation"
-        data-animateonscroll="repeat"
-        data-animation="zoomIn"
-        class="fa-1x slow"
-      >
-        <div class="picture">
-          
-          <img class="img-fluid" src="https://res.cloudinary.com/hdqtmtoze/image/upload/v1/media/memberDPs/pp_zu1ckk" />
-          
-        </div>
-        <div class="team-content">
-          <h3 class="name">Kartick</h3>
-          <h4 class="title"></h4>
-        </div>
-        <ul class="social">
-          <li>
-            <a
-              href="None"
-              class="fa fa-facebook"
-              aria-hidden="true"
-            ></a>
-          </li>
-          <li>
-            <a
-              href="None"
-              class="fa fa-instagram"
-              aria-hidden="true"
-            ></a>
-          </li>
-          <li>
-            <a
-              href="None"
-              class="fa fa-linkedin"
-              aria-hidden="true"
-            ></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="col-md">
-      <div
-        class="our-team"
-        style="width: 250px; margin: 20px auto;"
-        data-toggle="animation"
-        data-animateonscroll="repeat"
-        data-animation="zoomIn"
-        class="fa-1x slow"
-      >
-        <div class="picture">
-          
-          <img class="img-fluid" src="https://res.cloudinary.com/hdqtmtoze/image/upload/v1/media/memberDPs/69115652_1282063768660859_6322501595573518336_n_nfzzi8" />
-          
-        </div>
-        <div class="team-content">
-          <h3 class="name">Sneha</h3>
-          <h4 class="title"></h4>
-        </div>
-        <ul class="social">
-          <li>
-            <a
-              href="https://www.facebook.com/profile.php?id=100005717432107"
-              class="fa fa-facebook"
-              aria-hidden="true"
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/?hl=en"
-              class="fa fa-instagram"
-              aria-hidden="true"
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/sneha-singh-090988164"
-              class="fa fa-linkedin"
-              aria-hidden="true"
-            ></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
+    {% endif %}
+    {% endfor %}
   </div>
-  
- 
-           
-    
-
+  {% endfor %}
 </div>
-
-
-    <footer class="text-white" style="background-color: #a30338;">
-      <!-- Grid container -->
-      <div class="container p-4">
-        <!--Grid row-->
-        <div class="row" style="margin: 20px;">
-          <!--Grid column-->
-          <div
-            class="col-md-8 col-xs-12"
-            style="
-              text-align: center;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-            "
-          >
-            <div>
-              <h5 class="text-uppercase" >CONTACT US</h5>
-
-              <p >
-                You can reach us out at any time. <br />
-                Email us at: <a>debatingsociety.nitdgp@gmail.com</a> <br />
-                Call or message us at: 8017449727
-              </p>
-            </div>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <!-- <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 4</a>
-              </li>
-            </ul>
-          </div> -->
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div
-            class="col-md-4 col-xs-12"
-            style="
-              text-align: center;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-            
-            "
-          >
-            <div>
-              <h5 class="text-uppercase">VISIT US AT</h5>
-
-              <ul class="list-unstyled">
-                  &nbsp;&nbsp;
-                  <a href="https://www.facebook.com/debatingsociety3103.nitd/" class="fa fa-facebook text-white" aria-hidden="true" style="font-size: 21px;"></a>
-                  &nbsp;&nbsp;
-                  <a href="https://www.instagram.com/debsocnitd/" class="fa fa-instagram text-white" aria-hidden="true" style="font-size: 21px;"></a>
-                  &nbsp;&nbsp;
-                  <a href="https://www.linkedin.com/company/debating-society-nit-durgapur/about/" class="fa fa-linkedin text-white" aria-hidden="true" style="font-size: 21px;"></a>
-                  &nbsp;&nbsp;
-              </ul>
-            </div>
-          </div>
-          <!--Grid column-->
-        </div>
-        <!--Grid row-->
-      </div>
-      <!-- Grid container -->
-
-      <!-- Copyright -->
-      <div
-        class="text-center p-3"
-        style="
-          background-color: rgba(0, 0, 0, 0.123);
-
-        "
-      >
-        © 2020 Copyright:
-        <a class="text-white" href="/" ;"> Debsocnitdgp</a>
-      </div>
-      <!-- Copyright -->
-    </footer>
-
-    <!-- jQuery -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-
-    <!-- Popper.js -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script> -->
-
-    <!-- Bootstrap -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script> -->
-
-    <!-- Material Design for Bootstrap -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.16/js/mdb.min.js"></script> -->
-    <script src="/static/js/mdb.min.483b4d53a188.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript">
-      // $(document).ready(function(){
-      // 	$('div#loading').removeAttr('id');
-      // });
-      //var preloader = document.getElementById("loading");
-      // window.addEventListener('load', function(){
-      // 	preloader.style.display = 'none';
-      // 	})
-
-      // function myFunction() {
-      //   preloader.style.display = "none";
-      // }
-      $(window).load(function () {
-        setTimeout(function () {
-          $("#loading").fadeOut("slow");
-        }, 800);
-      });
-    </script>
-  </body>
-</html>
-
-{% endblock content %}
+{%endblock%}
