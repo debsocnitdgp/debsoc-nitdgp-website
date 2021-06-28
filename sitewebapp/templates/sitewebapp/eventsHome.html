@@ -233,7 +233,7 @@
         class="fa-1x slow"
       >
         {% if i.poster %}
-        <img src="{{i.poster.url}}" class="card-img-top" alt="..." />
+        <img src="{{i.poster.url}}" class="card-img-top" alt="..." style="object-fit: cover; height: 300px;" />
         {% endif %}
         <div class="card-body">
           <h5 class="card-title">{{i.event_name}}</h5>

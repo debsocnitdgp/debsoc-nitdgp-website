@@ -34,15 +34,18 @@
       <div
         class="card"
         style="width: 350px; margin: 20px auto;"
+        
         data-toggle="animation"
         data-animateonscroll="repeat"
         data-animation="slideInUp"
         class="fa-1x slow"
       >
         {% if i.image_url %}
-        <img src="{{i.image_url}}" class="card-img-top" alt="..." />
+        <img src="{{i.image_url}}" class="card-img-top" alt="..." 
+        style="object-fit: cover; height: 300px;"/>
         {% endif %}
-        <div class="card-body">
+          
+        <div class="card-body" >
           <h5 class="card-title">{{i.title}}</h5>
 
           <p>{{i.created_on}}</p>

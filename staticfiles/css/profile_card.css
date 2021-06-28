@@ -1,10 +1,12 @@
 .our-team {
   padding: 30px 0 40px;
   margin-bottom: 30px;
-  background-color: #fff;
+  background-color: rgb(10, 10, 10);
   text-align: center;
   overflow: hidden;
   position: relative;
+  box-shadow: 0px 0px 20px 1px #ff0157;
+  border-radius: 15px;
 }
 
 .our-team .picture {
@@ -21,7 +23,7 @@
   width: 100%;
   height: 0;
   border-radius: 50%;
-  background-color: #007180;
+  background-color: rgb(25, 25, 25);
   position: absolute;
   bottom: 135%;
   right: 0;
@@ -40,7 +42,7 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: #007180;
+  background-color: rgb(25, 25, 25);
   position: absolute;
   top: 0;
   left: 0;
@@ -49,15 +51,15 @@
 
 .our-team .picture img {
   width: 100%;
-  height: auto;
-
+  height: 100%;
+  object-fit: cover;
   border-radius: 50%;
   transform: scale(1);
   transition: all 0.9s ease 0s;
 }
 
 .our-team:hover .picture img {
-  box-shadow: 0 0 0 14px #007180;
+  box-shadow: 0 0 0 14px rgb(25, 25, 25);
   transform: scale(0.7);
 }
 
@@ -68,7 +70,7 @@
   text-transform: capitalize;
 }
 .our-team .name {
-  color: #000;
+  color: #eff5fc;
 }
 
 .our-team .social {
@@ -76,7 +78,7 @@
 
   padding: 0;
   margin: 0;
-  background-color: #007180;
+  background-color: rgb(20, 20, 20);
   position: absolute;
   bottom: -100px;
   left: 0;
