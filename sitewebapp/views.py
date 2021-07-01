@@ -81,7 +81,6 @@ def members(request):
     return render(request, 'sitewebapp/members.html', {'members4': members4, 'members3': members3, 'members2': members2})
 
 @never_cache
-@user_passes_test(lambda u: u.is_superuser)   
 def cmember(request):
     if request.method == 'POST':
         cform = MemberAddForm(request.POST, request.FILES)
