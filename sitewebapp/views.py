@@ -163,3 +163,52 @@ def view_alumni(request):
             o.append(i)
         
     return render(request,'sitewebapp/alumni.html',{'alm':o,'m':m})
+
+
+def edit_profile(request,key,tok):
+    print('c')
+    token=access_tokens.objects.filter(value=tok)
+    if token:
+        if request.method=='POST':
+            #inst= Members.objects.get(username=key)
+            inst = get_object_or_404(Members,username=key)
+            
+
+            if (1):
+                
+                cform = MemberAddForm(request.POST, request.FILES,instance=inst)
+                if cform.is_valid():
+                    cform.save()
+                    return redirect("/")
+            else:
+                return render(request,'sitewebapp/404.html',{})
+        else:
+            inst= Members.objects.get(username=key)
+            data = {
+                'username' : inst.username,
+                'firstname' : inst.firstname, 
+                'lastname' : inst.lastname,
+                'email' : inst.email,
+                'bio' :  inst.bio,
+                'year' : inst.year,
+                'post' : inst.post,
+                'sno' : inst.sno,
+                'dp' : inst.dp,
+                'facebook_url' : inst.facebook_url, 
+                'instagram_url' : inst.instagram_url, 
+                'linkedin_url' : inst.linkedin_url,
+                    }
+            cform = MemberAddForm(data)
+            return render(request, 'sitewebapp/editmember.html', {'cform':cform,'key':key,'tok':tok})
+    else:
+        return render(request,'sitewebapp/404.html',{})
+
+def edit_home(request,key):
+    if request.method=='GET':
+        print('s')
+        token=access_tokens.objects.filter(value=key)
+        if token:
+
+            return render(request,'sitewebapp/edithome.html',{'token':key})
+        else:
+            return render(request,'sitewebapp/404.html',{})

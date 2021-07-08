@@ -1,4 +1,6 @@
+
 {% extends "sitewebapp/base.html" %} {% block content %}
+{% load static %}
 <div class="container">
   <div class="headbox">
     <h1 class="heading">Our Team</h1>
@@ -45,6 +47,8 @@
         <div class="picture">
           {% if i.dp %}
           <img class="img-fluid" src="{{ i.dp.url }}" />
+          {% else %}
+            <img class="img-fluid" src="{% static 'assets/img/dogs/debsoc.png' %}" />
           {% endif %}
         </div>
         <div class="team-content">
@@ -94,6 +98,8 @@
         <div class="picture">
           {% if i.dp %}
           <img class="img-fluid" src="{{ i.dp.url }}" />
+          {% else %}
+            <img class="img-fluid" src="{% static 'assets/img/dogs/debsoc.png' %}" />
           {% endif %}
         </div>
         <div class="team-content">
@@ -143,6 +149,8 @@
         <div class="picture">
           {% if i.dp %}
           <img class="img-fluid" src="{{ i.dp.url }}" />
+          {% else %}
+            <img class="img-fluid" src="{% static 'assets/img/dogs/debsoc.png' %}" />
           {% endif %}
         </div>
         <div class="team-content">

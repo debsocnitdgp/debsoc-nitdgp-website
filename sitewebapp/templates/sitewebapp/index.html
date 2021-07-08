@@ -280,6 +280,8 @@ We believe the youth of the hour can bring a change towards positivity and stabi
           <div class="picture">
             {% if i.dp %}
             <img class="img-fluid" src="{{ i.dp.url }}" />
+            {% else %}
+            <img class="img-fluid" src="{% static 'assets/img/dogs/debsoc.png' %}" />
             {% endif %}
           </div>
           <div class="team-content">

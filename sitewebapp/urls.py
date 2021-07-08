@@ -20,5 +20,7 @@ urlpatterns = [
     path('logusr/',views.logusr,name='logusr'),
     path('adsdsd/',views.alumniadd,name='alumniadd'),
     path('Alumni/',views.view_alumni,name='alumni'),
+    path('editprofile/<key>/<tok>',views.edit_profile,name="edit"),
+    path('edithome/<key>',views.edit_home,name="edithome"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
