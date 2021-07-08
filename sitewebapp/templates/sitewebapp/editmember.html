@@ -7,8 +7,8 @@
   <body>
   <div style="text-align:center;">
   <h3>Hi There! We hope everyone is doing well!</h3>
-  <h4>Fillup the form below (Contact Apurva in case of an issue) :</h4>
-  <form method="POST" class="form-horizontal form_middle" enctype='multipart/form-data' action="." style="text-align:center;">
+  <h4>Fillup the form below (Contact apurva in case of an issue) :</h4>
+  <form method="POST" class="form-horizontal form_middle" enctype='multipart/form-data' action="{% url 'edit' key tok %}" style="text-align:center;">
   {% csrf_token %}
   {{cform.as_p}}
   <input type="submit" value="Upload"/>
