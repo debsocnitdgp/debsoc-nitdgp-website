@@ -18,10 +18,10 @@
         <div class="container"><a class="navbar-brand logo" href="#">Debsoc</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarNav"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects-grid-cards.html">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cv.html">Create</a></li>
-                    <li class="nav-item"><a class="nav-link" href="hire-me.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'index' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'members' %}">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'cmember' %}">Create</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Contact Us</a></li>
                 </ul>
             </div>
         </div>
@@ -31,7 +31,7 @@
             <div class="container">
                 <div class="avatar" style="background: url(&quot;{% static 'assets7/img/avatars/debsoc.png' %}&quot;) center / contain;"></div>
                 <div class="about-me">
-                    <p>Hello! This is the Debating society member account panel.<br>Please Create an account before changing any info(Contact Apurva in case of any problem).</p><a class="btn btn-outline-primary" role="button" href="#">Home</a>
+                    <p>Hello! This is the Debating society member account panel.<br>Please Create an account before changing any info(Contact Apurva in case of any problem).</p><a class="btn btn-outline-primary" role="button" href="{% url 'indexgit ' %}">Home</a>
                 </div>
             </div>
             <div class="container pb-5 pt-5">
@@ -48,27 +48,27 @@
         <section class="portfolio-block photography">
             <div class="container">
                 <div class="row g-0">
-                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><a href="#"><img class="img-fluid image" src="{% static 'assets7/img/nature/image5.jpg' %}"></a></div>
-                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><a href="#"><img class="img-fluid image" src="{% static 'assets7/img/nature/image2.jpg' %}"></a></div>
-                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><a href="#"><img class="img-fluid image" src="{% static 'assets7/img/tech/image4.jpg' %}"></a></div>
+                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><a href="#"><img class="img-fluid image" src="{% static 'ss6.jpeg' %}"></a></div>
+                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><a href="#"><img class="img-fluid image" src="{% static 'ss5.jpeg' %}"></a></div>
+                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><a href="#"><img class="img-fluid image" src="{% static 'ss4.jpeg' %}"></a></div>
                 </div>
             </div>
         </section>
         <section class="portfolio-block call-to-action border-bottom">
             <div class="container">
                 <div class="d-flex justify-content-center align-items-center content">
-                    <h3>Our Team</h3><button class="btn btn-outline-primary btn-lg" type="button">See more...</button>
+                    <h3>Our Team</h3><a href="{% url 'members' %}"><button href="{% url 'members' %}" class="btn btn-outline-primary btn-lg" type="button">See more...</button></a>
                 </div>
             </div>
         </section>
         <section class="portfolio-block skills">
-            <p></p>
+            <p style="border-right: 5px;border-left: 5px;">The Debating Society, NIT Durgapur, is an ardent believer of a wholesome development where students would actively involve themselves in issues concerning social interest and upsurge. As responsible citizens, we feel the importance to amplify voices when the nation requires our support and opinions. We look forward to participation from the youth wing with solutions to the massive lockjaws with intellect, humanity and feasibility. Each consecutive step of our club attempts to bring a stir towards positive outcomes in the society and provide a platform to creative ideologies piloting progress. We believe the youth of the hour can bring a change towards positivity and stability only when we are vigilant, receptive and equally responsive in raising our voices and directing our thought processes towards the present issues concerning the society.</p>
         </section>
     </main>
     <footer class="page-footer">
         <div class="container">
-            <div class="links"><a href="#">About Us</a><a href="#">Contact Us</a><a href="#">Team</a></div>
-            <div class="social-icons"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-instagram-outline"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a></div>
+            <div class="links"><a href="{% url 'about' %}">About Us</a><a href="{% url 'about' %}">Contact Us</a><a href="{% url 'members' %}">Team</a></div>
+            <div class="social-icons"><a href="https://www.facebook.com/debatingsociety3103.nitd/"><i class="icon ion-social-facebook"></i></a><a href="https://www.instagram.com/debsocnitd/"><i class="icon ion-social-instagram-outline"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a></div>
         </div>
     </footer>
     <script>
