@@ -1,0 +1,143 @@
+{% extends "sitewebapp/base.html" %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Your description">
+    <meta name="author" content="Your name">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <meta property="og:site_name" content="" /> <!-- website name -->
+    <meta property="og:site" content="" /> <!-- website link -->
+    <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+
+    <!-- Webpage Title -->
+    <title>Oxford University Debate</title>
+
+    <!-- Styles -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- Favicon  -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        .loader {
+            position: fixed;
+            background-color: #FFF;
+            opacity: 1;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="loader">
+        <img src="./images/dslog.png">
+    </div>
+
+
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+
+                    <h1 class="h1-large ">OXFORD<br> UNIVERSITY<br> DEBATE <br>2.0</h1>
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+                    <div class="button-container">
+                        <a class="btn-solid-lg page-scroll" href="#projects">About</a>
+                        <a class="btn-outline-lg page-scroll" href="./form1.html">Register</a>
+                    </div> <!-- end of button-container -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+
+
+
+        </div>
+        </div> <!-- end of container -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Process -->
+    <div class="basic-5" id="brochure">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">COMING SOON</h2>
+                    <hr class="hr-heading">
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="step-container">
+                        <div class="step" id="days">00 </div>
+
+                        <div class="step" id="hours">00 </div>
+
+                        <div class="step" id="minutes">00 </div>
+
+                        <div class="step" id="seconds">00 </div>
+                    </div> <!-- end of step-container -->
+                    <p>text about brochure</p>
+                    <a class="btn-solid-reg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Download The
+                        Brochure</a>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-5 -->
+    <!-- end of process -->
+
+
+
+
+    </div> <!-- end of counter-container -->
+    <!-- end of counter -->
+
+    </div> <!-- end of col -->
+    </div> <!-- end of row -->
+    </div> <!-- end of container -->
+    </div> <!-- end of counter -->
+    <!-- end of about -->
+{% endblock %}

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sitewebapp',
     'audition',
+    'oud',
     'cloudinary_storage',
     'cloudinary',
     
@@ -197,9 +198,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'hdqtmtoze',
-    'API_KEY': config('API_SEC'),
-    'API_SECRET': config('API_KEY'),
+    'CLOUD_NAME': 'dsmuyiatg',
+    'API_KEY': '563115966364725',
+    'API_SECRET': '1uBOy5umu95Hld45G9CiTCtxuRw',
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 

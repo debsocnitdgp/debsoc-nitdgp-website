@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'hehe_lol_no'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1','debsocnitd.team', 'debsocnitdgp.in', 'www.debsocnitdgp.in', '*.debsocnitdgp.in']
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sitewebapp',
     'audition',
+    'oud',
     'cloudinary_storage',
     'cloudinary',
 
