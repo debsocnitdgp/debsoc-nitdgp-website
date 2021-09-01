@@ -17,9 +17,12 @@ def oud_register(request):
             participant.college_year = request.POST.get('college_year')
             participant.discord_id = request.POST.get('discord_id')
             participant.prior = request.POST.get('prior')
-            if(request.FILES['ss'] is not None):
-                participant.cv = request.FILES['cv']
-                participant.is_adj = True
+            try:
+                if(request.FILES['cv']):
+                    participant.cv = request.FILES['cv']
+                    participant.is_adj = True
+            except:
+                participant.is_adj = False
             participant.ss = request.FILES['ss']
             # client=razorpay.Client(auth=("rzp_test_KblRM8ffzJ6tB2","i0dm023uPO2EeoCe8Aeqfolq"))
             # order_amount = 100 * 100
@@ -30,7 +33,7 @@ def oud_register(request):
             # return render(request, 'oud/register.html',{'payment':payment, 'order_amount':order_amount})
             return render(request, 'oud/success.html')
 
-    return render(request, 'oud/register.html')
+    return render(request, 'oud/new.html')
 
 # @csrf_exempt
 # def success(request):

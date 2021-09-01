@@ -1,0 +1,330 @@
+{% extends "sitewebapp/base.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Your description">
+    <meta name="author" content="Your name">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <meta property="og:site_name" content="" /> <!-- website name -->
+    <meta property="og:site" content="" /> <!-- website link -->
+    <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" /> <!-- whe<re do you want your post to link to -->
+    <meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+
+    <!-- Webpage Title -->
+
+
+    <!-- Styles -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
+    <link href="{% static 'oud/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'oud/css/fontawesome-all.min.css' %}" rel="stylesheet">
+    <link href="{% static 'oud/css/swiper.css' %}" rel="stylesheet">
+    <link href="{% static 'oud/css/styles.css' %}" rel="stylesheet">
+
+    <!-- Favicon  -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'oud/images/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'oud/images/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'oud/images/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'oud/images/site.webmanifest' %}">
+    <link rel="mask-icon" href="{% static 'oud/images/safari-pinned-tab.svg' %}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        .loader {
+            position: fixed;
+            background-color: #FFF;
+            opacity: 1;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+    </style>
+    <title>Oxford University Debate | Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'oud/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'oud/vendor/animate/animate.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'oud/vendor/css-hamburgers/hamburgers.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'oud/vendor/animsition/css/animsition.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'oud/vendor/select2/select2.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'oud/vendor/daterangepicker/daterangepicker.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'oud/css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'oud/css/main.css' %}">
+    <!--===============================================================================================-->
+</head>
+
+<body>
+
+
+
+
+
+    <div class="loader">
+        <img src="./images/dslog.png">
+    </div>
+
+    <!-- Process -->
+    <!-- <div class="overlay"> -->
+    <div class="basic-5" id="brochure">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">OXFORD UNIVERSITY DEBATE 2.0</h2>
+                    <hr class="hr-heading">
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="step-container">
+                        <div class="step" id="days">00 </div>
+
+                        <div class="step" id="hours">00 </div>
+
+                        <div class="step" id="minutes">00 </div>
+
+                        <div class="step" id="seconds">00 </div>
+                    </div> <!-- end of step-container -->
+                    <p class="p-brochure">Winter is just around the corner; are you ready to turn the heat up?
+
+Think no further because we bring to you a once-in-a-lifetime opportunity in which your voice will mirror your passion and your belief will either make or break the game. 
+
+We, the Debating Society, are thrilled to present to you the eagerly anticipated second edition of Oxford Debate, 2021.
+
+We can't wait to witness the powerful exchange of dialogue between the finest debaters as we prepare to observe sheer magnificence.
+
+Make sure to indulge, infuse, and improve as you upscale your game and stay at the top of the leaderboard, because you will be only competing against the best, to take home the most exciting prizes and certificates.
+
+Registrations for participants and adjudicators are live now! 
+What's even better? It is completely free! Hurry up and register right now!</p>
+                    <!-- <a class="btn-solid-reg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Download The
+                        Brochure</a> -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="container-contact100">
+                    <div class="wrap-contact100">
+                        <form method="POST" class="contact100-form validate-form" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <span class="contact100-form-title">
+                                REGISTRATION
+                            </span>
+
+                            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                                <span class="label-input100">Your Name</span>
+                                <input class="input100" type="text" name="username" placeholder="Enter your name" required>
+                                <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input"
+                                data-validate="Valid email is required: ex@abc.xyz">
+                                <span class="label-input100">Email</span>
+                                <input class="input100" type="text" name="email" placeholder="Enter your email addess"
+                                    required>
+                                <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input"
+                                data-validate="Valid Discord Id is @username#0000">
+                                <span class="label-input100">Discord Id</span>
+                                <input class="input100" type="text" name="discord_id" placeholder="Enter your Discord Id"
+                                    required>
+                                <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input"
+                                data-validate="Preferably provide WhatsApp Number">
+                                <span class="label-input100">Phone Number</span>
+                                <input class="input100" type="text" name="phone_no" placeholder="Enter your phone number"
+                                    required>
+                                <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input" data-validate="">
+                                <span class="label-input100">College Name</span>
+                                <input class="input100" type="text" name="college" placeholder="Enter your college name"
+                                    required>
+                                <span class="focus-input100"></span>
+                            </div>
+
+
+                            <div class="wrap-input100 validate-input" data-validate="">
+                                <span class="label-input100">Year</span>
+                                <input class="input100" type="number" name="college_year"
+                                    placeholder="Enter your college year">
+                                <span class="focus-input100"></span>
+                            </div>
+                            <!--   <div class="wrap-input100 input100-select">
+                        <span class="label-input100">Year</span>
+                        <div>
+                            <select class="selection-2" name="service">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+
+                            </select>
+                        </div>
+                        <span class="focus-input100"></span>
+                    </div>
+-->
+
+                            <div class="wrap-input100 validate-input" data-validate="This is required">
+                                <span class="label-input100">Prior Knowledge of OUD?</span>
+                                <textarea class="input100" name="prior"
+                                    placeholder="Mention your experience here..."></textarea>
+                                <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="editfield wrap-input100 validate-input">
+                                <div class="radio">
+                                    <span class="label-input100">Select a Role (required)</span>
+                                    <div id="field_8"><label><input type="radio" name="field_8" id="option_9"
+                                                value="Adjudicator"
+                                                onclick="document.getElementById('divUrl').style.display='block'"
+                                                required>
+                                            Adjudicator</label><label><input type="radio" name="field_8" id="option_10"
+                                                value="Participant"
+                                                onclick="document.getElementById('divUrl').style.display='none'">
+                                            Participant</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="editfield" id="divUrl" style="display:none">
+                                <label for="field_19">Upload Resume </label>
+                                <input type="file" name="cv" id="field_19" value="" />
+                            </div>
+
+
+                            <div class="wrap-input100 validate-input">
+                                <span class="label-input100">Scan to Pay</span>
+                                <img src="{% static 'oud/images/qr.jpeg' %}" style="height: auto; max-width: 400px;  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;">
+
+                            </div>
+
+                            <div class="wrap-input100 validate-input" data-validate="">
+                                <span class="label-input100">Payment screenshot</span>
+                                <input class="input100" type="file" name="ss"
+                                    placeholder="Attach your payment screenshot" required>
+                                <span class="focus-input100"></span>
+                            </div>
+
+
+
+                            <div class="container-contact100-form-btn">
+                                <div class="wrap-contact100-form-btn">
+                                    <div class="contact100-form-bgbtn"></div>
+                                    <button class="contact100-form-btn" type="submit" value="Register"
+                                        name="participant">
+                                        <span>
+                                            Register Here
+                                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- end of container -->
+
+    </div> <!-- end of basic-5 -->
+    <!-- end of process -->
+
+</div>
+
+    </div> <!-- end of counter-container -->
+    <!-- end of counter -->
+
+    </div> <!-- end of col -->
+    </div> <!-- end of row -->
+    </div> <!-- end of container -->
+    </div> <!-- end of counter -->
+    <!-- end of about -->
+
+    <div id="dropDownSelect1"></div>
+
+
+    <!-- Scripts -->
+    <script src="{% static 'oud/js/bootstrap.min.js' %}"></script> <!-- Bootstrap framework -->
+
+    <script src="{% static 'oud/js/purecounter.min.js' %}"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="{% static 'oud/js/scripts.js' %}"></script> <!-- Custom scripts -->
+    <!--===============================================================================================-->
+    <script src="{% static 'oud/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'oud/vendor/animsition/js/animsition.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'oud/vendor/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'oud/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'oud/vendor/select2/select2.min.js' %}"></script>
+    <script>
+        $(".selection-2").select2({
+            minimumResultsForSearch: 20,
+            dropdownParent: $('#dropDownSelect1')
+        });
+    </script>
+    <!--===============================================================================================-->
+    <script src="{% static 'oud/vendor/daterangepicker/moment.min.js' %}"></script>
+    <script src="{% static 'oud/vendor/daterangepicker/daterangepicker.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'oud/vendor/countdowntime/countdowntime.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'oud/js/main.js' %}"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+    </script>
+</body>
+
+</html>
+
+{% endblock %}

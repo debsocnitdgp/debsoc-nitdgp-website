@@ -1,6 +1,9 @@
 {% extends "sitewebapp/base.html" %}
 {% load static %}
 {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,11 +18,11 @@
     <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
     <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
     <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
-    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta property="og:url" content="" /> <!-- whe<re do you want your post to link to -->
     <meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
 
     <!-- Webpage Title -->
-    <title>Oxford University Debate</title>
+
 
     <!-- Styles -->
     <link
@@ -36,7 +39,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link rel="manifest" href="images/site.webmanifest">
-    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="mask-icon" href="{% static 'images/safari-pinned-tab.svg' %}" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <style>
@@ -51,6 +54,29 @@
             z-index: 10;
         }
     </style>
+    <title>Oxford University Debate | Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{% static 'oud/images/icons/favicon.ico' %}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
 </head>
 
 <body>
@@ -61,51 +87,12 @@
         <img src="./images/dslog.png">
     </div>
 
-
-    <!-- Header -->
-    <header id="header" class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-
-                    <h1 class="h1-large ">OXFORD<br> UNIVERSITY<br> DEBATE <br>2.0</h1>
-                </div> <!-- end of col -->
-                <div class="col-lg-6">
-                    <div class="button-container">
-                        <a class="btn-solid-lg page-scroll" href="#projects">About</a>
-                        <a class="btn-outline-lg page-scroll" href="./form1.html">Register</a>
-                    </div> <!-- end of button-container -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-
-
-
-        </div>
-        </div> <!-- end of container -->
-    </header> <!-- end of header -->
-    <!-- end of header -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- Process -->
     <div class="basic-5" id="brochure">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="h2-heading">COMING SOON</h2>
+                    <h2 class="h2-heading">OXFORD UNIVERSITY DEBATE 2.0</h2>
                     <hr class="hr-heading">
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -120,15 +107,151 @@
 
                         <div class="step" id="seconds">00 </div>
                     </div> <!-- end of step-container -->
-                    <p>text about brochure</p>
+                    <p>Winter is just around the corner; are you ready to turn the heat up?
+
+Think no further because we bring to you a once-in-a-lifetime opportunity in which your voice will mirror your passion and your belief will either make or break the game. 
+
+We, the Debating Society, are thrilled to present to you the eagerly anticipated second edition of Oxford Debate, 2021.
+
+We can't wait to witness the powerful exchange of dialogue between the finest debaters as we prepare to observe sheer magnificence.
+
+Make sure to indulge, infuse, and improve as you upscale your game and stay at the top of the leaderboard, because you will be only competing against the best, to take home the most exciting prizes and certificates.
+
+Registrations for participants and adjudicators are live now! 
+What's even better? It is completely free! Hurry up and register right now!</p>
                     <a class="btn-solid-reg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Download The
                         Brochure</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
+
+            <div class="row">
+                <div class="container-contact100">
+                    <div class="wrap-contact100">
+                        <form class="contact100-form validate-form">
+                            <span class="contact100-form-title">
+                                REGISTRATION
+                            </span>
+
+                            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                                <span class="label-input100">Your Name</span>
+                                <input class="input100" type="text" name="name" placeholder="Enter your name" required>
+                                <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input"
+                                data-validate="Valid email is required: ex@abc.xyz">
+                                <span class="label-input100">Email</span>
+                                <input class="input100" type="text" name="email" placeholder="Enter your email addess"
+                                    required>
+                                <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input"
+                                data-validate="Valid Discord Id is @username#0000">
+                                <span class="label-input100">Discord Id</span>
+                                <input class="input100" type="text" name="discord" placeholder="Enter your Discord Id"
+                                    required>
+                                <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input"
+                                data-validate="Preferably provide WhatsApp Number">
+                                <span class="label-input100">Phone Number</span>
+                                <input class="input100" type="text" name="phone" placeholder="Enter your phone number"
+                                    required>
+                                <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input" data-validate="">
+                                <span class="label-input100">College Name</span>
+                                <input class="input100" type="text" name="email" placeholder="Enter your college name"
+                                    required>
+                                <span class="focus-input100"></span>
+                            </div>
+
+
+
+                            <div class="wrap-input100 input100-select">
+                                <span class="label-input100">Year</span>
+                                <div>
+                                    <select class="selection-2" name="service">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+
+                                    </select>
+                                </div>
+                                <span class="focus-input100"></span>
+                            </div>
+
+
+                            <div class="wrap-input100 validate-input" data-validate="This is required">
+                                <span class="label-input100">Prior Knowledge of OUD?</span>
+                                <textarea class="input100" name="message"
+                                    placeholder="Mention your experience here..."></textarea>
+                                <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="editfield wrap-input100 validate-input">
+                                <div class="radio">
+                                    <span class="label-input100">Select a Role (required)</span>
+                                    <div id="field_8"><label><input type="radio" name="field_8" id="option_9"
+                                                value="Adjudicator"
+                                                onclick="document.getElementById('divUrl').style.display='block'"
+                                                required>
+                                            Adjudicator</label><label><input type="radio" name="field_8" id="option_10"
+                                                value="Participant"
+                                                onclick="document.getElementById('divUrl').style.display='none'">
+                                            Participant</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="editfield" id="divUrl" style="display:none">
+                                <label for="field_19">Upload Resume </label>
+                                <input type="file" name="field_19" id="field_19" value="" />
+                            </div>
+
+
+                            <div class="wrap-input100 validate-input">
+                                <span class="label-input100">Scan to Pay</span>
+                                <img src="./images/qr.jpeg" style="height: auto; max-width: 400px;  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;">
+
+                            </div>
+
+                            <div class="wrap-input100 validate-input" data-validate="">
+                                <span class="label-input100">Payment screenshot</span>
+                                <input class="input100" type="file" name="pay_ss"
+                                    placeholder="Attach your payment screenshot" required>
+                                <span class="focus-input100"></span>
+                            </div>
+
+
+
+                            <div class="container-contact100-form-btn">
+                                <div class="wrap-contact100-form-btn">
+                                    <div class="contact100-form-bgbtn"></div>
+                                    <button class="contact100-form-btn">
+                                        <span>
+                                            <a href="./razorpay.html"> Register Here</a>
+                                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
         </div> <!-- end of container -->
+
     </div> <!-- end of basic-5 -->
     <!-- end of process -->
-
 
 
 
@@ -140,4 +263,50 @@
     </div> <!-- end of container -->
     </div> <!-- end of counter -->
     <!-- end of about -->
-{% endblock %}
+
+    <div id="dropDownSelect1"></div>
+
+
+    <!-- Scripts -->
+    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+
+    <script src="js/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script>
+        $(".selection-2").select2({
+            minimumResultsForSearch: 20,
+            dropdownParent: $('#dropDownSelect1')
+        });
+    </script>
+    <!--===============================================================================================-->
+    <script src="vendor/daterangepicker/moment.min.js"></script>
+    <script src="vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="{% 'vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+    </script>
+</body>
+
+</html>
