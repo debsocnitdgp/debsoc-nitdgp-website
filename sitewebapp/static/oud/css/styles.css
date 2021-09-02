@@ -145,7 +145,7 @@ a {
 
 .hr-heading {
 	display: block;
-	width: 5rem;
+	width: 25rem;
 	margin-top: 0.75rem;
 	margin-bottom: 0.75rem;
 	border: 1px solid #312f28;
@@ -508,7 +508,7 @@ a {
 /*     Media Queries     */
 /*************************/
 /* Min-width 768px */
-@media (min-width: 768px) {
+@media (min-width: 280px) {
 
 
 
@@ -557,7 +557,8 @@ a {
 
 		.p-brochure {
 			font-size: 20px !important;
-			color: #312f28 !important;
+			color: #000!important;
+			font-weight:800;
 		}
 
 		/* end of general styles */
@@ -574,3 +575,5 @@ a {
 
 			/* end of general styles */
 		}}}
+
+	
