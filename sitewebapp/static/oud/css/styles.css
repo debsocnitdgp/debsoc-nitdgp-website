@@ -145,7 +145,7 @@ a {
 
 .hr-heading {
 	display: block;
-	width: 25rem;
+	width: max-width;
 	margin-top: 0.75rem;
 	margin-bottom: 0.75rem;
 	border: 1px solid #312f28;
@@ -527,7 +527,7 @@ a {
 	}
 
 	.basic-5 p {
-		width: 40rem;
+		width: max-width;
 		margin-right: auto;
 		margin-left: auto;
 		color: #312f28;
@@ -555,11 +555,7 @@ a {
 			margin-left: auto;
 		}
 
-		.p-brochure {
-			font-size: 20px !important;
-			color: #000!important;
-			font-weight:800;
-		}
+		
 
 		/* end of general styles */
 
@@ -576,4 +572,8 @@ a {
 			/* end of general styles */
 		}}}
 
-	
+	  .p-brochure {
+			font-size: 20px !important;
+			color: #000!important;
+			font-weight:800;
+		}
