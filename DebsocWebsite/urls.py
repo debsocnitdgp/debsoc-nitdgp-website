@@ -23,7 +23,8 @@ from django.conf.urls import url
 
 
 urlpatterns = [
-    path('', include('sitewebapp.urls')),
+    path('main/', include('sitewebapp.urls')),
     path('admin/', admin.site.urls),
     path('audi/',include('audition.urls')),
+    path('', include('oud.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

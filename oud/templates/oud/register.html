@@ -1,0 +1,159 @@
+{% extends "sitewebapp/base.html" %}
+{% load static %}
+{% block content %}
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'oud/css/bootstrap.min.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'oud/css/font-awesome.min.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'oud/css/animate.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'oud/css/hamburgers.min.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'oud/css/animsition.min.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'oud/css/select2.min.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'oud/css/daterangepicker.css' %}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'oud/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'oud/css/main.css' %}">
+	<!--===============================================================================================-->
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+				<span class="contact100-form-title">
+					REGISTRATION
+				</span>
+
+				<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<span class="label-input100">Your Name</span>
+					<input class="input100" type="text" name="username" placeholder="Enter your name">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+					<span class="label-input100">Email</span>
+					<input class="input100" type="text" name="email" placeholder="Enter your email addess">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Valid Discord Id is @username#0000">
+					<span class="label-input100">Discord Id</span>
+					<input class="input100" type="text" name="discord_id" placeholder="Enter your Discord Id">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Preferably provide WhatsApp Number">
+					<span class="label-input100">Phone Number</span>
+					<input class="input100" type="text" name="phone_no" placeholder="Enter your phone number">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="">
+					<span class="label-input100">College Name</span>
+					<input class="input100" type="text" name="college" placeholder="Enter your college name">
+					<span class="focus-input100"></span>
+				</div>
+
+                <div class="wrap-input100 validate-input" data-validate="">
+					<span class="label-input100">Year</span>
+					<input class="input100" type="number" name="college_year" placeholder="Enter your college year">
+					<span class="focus-input100"></span>
+				</div>		
+
+
+				<!-- <div class="wrap-input100 input100-select">
+					<span class="label-input100">Year</span>
+					<div>
+						<select class="selection-2" name="service">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+
+						</select>
+					</div>
+					<span class="focus-input100"></span>
+				</div> -->
+
+
+				<div class="wrap-input100 validate-input" data-validate="This is required">
+					<span class="label-input100">Prior Knowledge of OUD?</span>
+					<textarea class="input100" name="prior" placeholder="mention your experience here..."></textarea>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="">
+					<span class="label-input100">Upload CV</span>
+					<input class="input100" type="file" name="cv" placeholder="Attach your cv" >
+					<span class="focus-input100"></span>
+				</div>	
+
+				<div class="wrap-input100 validate-input" data-validate="">
+					<span class="label-input100">Payment screenshot</span>
+					<input class="input100" type="file" name="ss" placeholder="Attach your payment screenshot" >
+					<span class="focus-input100"></span>
+				</div>		
+
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn" type="submit" value="Register" name="participant">
+							<span>
+								Register
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
+						
+					</div>
+				</div>
+			</form>
+			
+		</div>
+		
+	</div>
+	
+
+
+
+	<div id="dropDownSelect1"></div>
+
+	<!--===============================================================================================-->
+	<script src="{% static 'oud/js/jquery-3.2.1.min.js' %}"></script>
+	<!--===============================================================================================-->
+	<script src="{% static 'oud/js/animsition.min.js' %}"></script>
+	<!--===============================================================================================-->
+	<script src="{% static 'oud/js/popper.js' %}"></script>
+	<script src="{% static 'oud/js/bootstrap.min.js' %}"></script>
+	<!--===============================================================================================-->
+	<script src="{% static 'oud/js/select2.min.js' %}"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+	<!--===============================================================================================-->
+	<script src="{% static 'oud/js/moment.min.js' %}"></script>
+	<script src="{% static 'oud/js/daterangepicker.js' %}"></script>
+	<!--===============================================================================================-->
+	<script src="{% static 'oud/js/countdowntime.js' %}"></script>
+	<!--===============================================================================================-->
+	<script src="{% static 'oud/js/main.js' %}"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-23581568-13');
+	</script>
+
+{% endblock %}
