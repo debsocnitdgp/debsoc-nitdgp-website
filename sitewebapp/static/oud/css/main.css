@@ -257,11 +257,28 @@ iframe {
 }
 
 .label-input100 {
-  font-family: Poppins-Regular;
-  font-size: 13px;
-  color: #3f3d36;
-  line-height: 1.5;
-  padding-left: 5px;
+   display: block;
+    width: 100%;
+    background: transparent;
+    font-family: Poppins-Medium;
+    font-size: 22px;
+    font-weight:800;
+    line-height: 2;
+    padding: 2PX 5px;
+    COLOR: BLACK;
+}
+
+.label-input100center {
+   display: block;
+    width: 100%;
+    background: transparent;
+    font-family: Poppins-Medium;
+    font-size: 22px;
+    font-weight:800;
+    line-height: 2;
+    padding: 2PX 5px;
+    COLOR: BLACK;
+    text-align:center;
 }
 
 .input100 {
@@ -559,3 +576,26 @@ textarea.input100 {
   color: #e2d9d9;
   line-height: 1.2;
 }
+
+	.input100::-webkit-input-placeholder {
+    color: black;
+    font-weight: 200;
+
+}
+
+.element::-moz-placeholder {
+        color: black;
+     font-weight: 200;
+}
+
+
+.element:-ms-input-placeholder {
+       color: black;
+        font-weight: 200;
+} 
+
+
+.element:-o-input-placeholder {
+        color: black;
+        font-weight: 200;
+} 
