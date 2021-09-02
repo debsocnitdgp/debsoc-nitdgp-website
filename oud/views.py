@@ -23,7 +23,12 @@ def oud_register(request):
                     participant.is_adj = True
             except:
                 participant.is_adj = False
-            participant.ss = request.FILES['ss']
+            try:
+                if(request.FILES['ss']):
+                    participant.ss = request.FILES['ss']
+                    participant.is_adj = False
+            except:
+                participant.is_adj = True
             # client=razorpay.Client(auth=("rzp_test_KblRM8ffzJ6tB2","i0dm023uPO2EeoCe8Aeqfolq"))
             # order_amount = 100 * 100
             # order_currency = 'INR'
@@ -31,7 +36,7 @@ def oud_register(request):
             # participant.payment_id= payment['id']
             participant.save()
             # return render(request, 'oud/register.html',{'payment':payment, 'order_amount':order_amount})
-            return render(request, 'oud/success.html')
+            return redirect('/success')
 
     return render(request, 'oud/new.html')
 
@@ -49,3 +54,7 @@ def oud_register(request):
 #         participant.save()
 
 #     return render(request, 'oud/success.html')
+
+
+def show_success(request):
+    return render(request,'oud/success.html')
