@@ -1,15 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect, JsonResponse
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
 from .models import *
-from django.db.models import Count
 from .forms import CommentForm, MemberAddForm, blogcform,alumniform
 from django.utils import timezone
-from django.views.decorators.cache import cache_control, never_cache
-from django.contrib.auth.decorators import login_required
+from django.views.decorators.cache import  never_cache
 from django.contrib.auth.decorators import user_passes_test
-from datetime import datetime
 from django.http import HttpResponseRedirect
-import csv
 # Create your views here.
 
 @never_cache

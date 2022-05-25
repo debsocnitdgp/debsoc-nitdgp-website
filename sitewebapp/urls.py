@@ -1,7 +1,6 @@
 from django.urls import path
-from django.conf.urls import url, include
+from django.conf.urls import include
 from django.conf import settings
-import django.views.defaults
 from django.conf.urls.static import static
 from . import views
 

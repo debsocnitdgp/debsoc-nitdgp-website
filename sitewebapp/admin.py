@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models import Alumni, Members, access_tokens, blog, Comments, event
-from nested_inline.admin import NestedStackedInline, NestedModelAdmin 
 # Register your models here.
 
 class commentInLine(admin.TabularInline):
