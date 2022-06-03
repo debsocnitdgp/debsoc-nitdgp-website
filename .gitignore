@@ -6,6 +6,10 @@ lib
 bin/
 lib/
 
+.venv/
+
+__pycache__/
+
 pyvenv.cfg 
 db.sqlite3
 .env.save 
