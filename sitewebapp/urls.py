@@ -21,5 +21,6 @@ urlpatterns = [
     path('Alumni/',views.view_alumni,name='alumni'),
     path('editprofile/<key>/<tok>',views.edit_profile,name="edit"),
     path('edithome/<key>',views.edit_home,name="edithome"),
+    path('api/members/', views.api_member_list, name="member_api")
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

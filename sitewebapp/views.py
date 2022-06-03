@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect, JsonResponse
 from .models import *
 from .forms import CommentForm, MemberAddForm, blogcform,alumniform
 from django.utils import timezone
 from django.views.decorators.cache import  never_cache
 from django.contrib.auth.decorators import user_passes_test
 from django.http import HttpResponseRedirect
-# Create your views here.
+
+from rest_framework.decorators import api_view
+from .serializers import *
 
 @never_cache
 def about(request):
@@ -208,3 +210,21 @@ def edit_home(request,key):
             return render(request,'sitewebapp/edithome.html',{'token':key})
         else:
             return render(request,'sitewebapp/404.html',{})
+
+
+
+# API VIEWS
+
+@api_view(['GET'])
+def api_member_list(request):
+    """
+    List all code snippets, or create a new snippet.
+    """
+    members4 = Members.objects.filter(year="Fourth").order_by('sno')
+    members3 = Members.objects.filter(year="Third").order_by('sno')
+    members2 = Members.objects.filter(year="Second").order_by('post')
+    return JsonResponse({
+        "2": MemberSerializer(members2, many=True).data,
+        "3": MemberSerializer(members3, many=True).data,
+        "4": MemberSerializer(members4, many=True).data
+    }, safe=False)
