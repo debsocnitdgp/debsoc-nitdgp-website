@@ -23,6 +23,7 @@ urlpatterns = [
     path('edithome/<key>',views.edit_home,name="edithome"),
     path('api/members/', views.api_member_list, name="member_api"),
     path('api/events/', views.api_event_list, name="event_api"),
+    path('api/event/<int:event_id>/', views.api_get_one_event, name="one_event_api"),
     path('api/blogs/', views.api_list_blogs, name="blogs_api"),
     path('api/blog/<int:blog_id>/', views.api_get_one_blog, name="one_blog_api"),
     path('api/comments/<int:blog_id>/', views.api_get_comments, name="comments_api"),
