@@ -240,3 +240,23 @@ def api_event_list(request):
         'live': EventSerializer(events_live, many=True).data,
         'upcoming': EventSerializer(events_up, many=True).data
     }, safe=False)
+
+@api_view(['GET'])
+def api_list_blogs(request):
+    blogs = blog.objects.filter(active=True).order_by('-created_on')
+
+    return JsonResponse(BlogSerializer(blogs, many=True).data, safe=False)
+
+@api_view(['GET'])
+def api_get_one_blog(request, blog_id):
+    _blog = blog.objects.get(id=blog_id)
+
+    return JsonResponse(BlogSerializer(_blog).data)
+
+@api_view(['GET'])
+def api_get_comments(request, blog_id):
+    comments = Comments.objects.filter(post=blog_id).filter(active=True).order_by("-commented_on")
+
+    print(comments)
+
+    return JsonResponse(CommentsSerializer(comments, context={'request': request}, many=True).data, safe=False)
