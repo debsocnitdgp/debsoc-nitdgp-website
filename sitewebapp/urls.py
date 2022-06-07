@@ -25,6 +25,7 @@ urlpatterns = [
     path('api/events/', views.api_event_list, name="event_api"),
     path('api/blogs/', views.api_list_blogs, name="blogs_api"),
     path('api/blog/<int:blog_id>/', views.api_get_one_blog, name="one_blog_api"),
-    path('api/comments/<int:blog_id>/', views.api_get_comments, name="comments_api")
+    path('api/comments/<int:blog_id>/', views.api_get_comments, name="comments_api"),
+    path('api/alumni/', views.api_get_alumni, name="alumni_api"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

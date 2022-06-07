@@ -260,3 +260,13 @@ def api_get_comments(request, blog_id):
     print(comments)
 
     return JsonResponse(CommentsSerializer(comments, context={'request': request}, many=True).data, safe=False)
+
+@api_view(['GET'])
+def api_get_alumni(request):
+    alumni = Alumni.objects.all().order_by('batch')
+    batch = {}
+    for alm in alumni:
+        if alm.batch not in batch:
+            batch[alm.batch] = []
+        batch[alm.batch].append(AlumniSerializer(alm).data)
+    return JsonResponse(batch, safe=False)
