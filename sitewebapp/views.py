@@ -228,3 +228,15 @@ def api_member_list(request):
         "3": MemberSerializer(members3, many=True).data,
         "4": MemberSerializer(members4, many=True).data
     }, safe=False)
+
+@api_view(['GET'])
+def api_event_list(request):
+    events_up = event.objects.filter(active=True).filter(event_status='Upcoming').order_by('-event_datetime')
+    events_past = event.objects.filter(active=True).filter(event_status='Past').order_by('-event_datetime')
+    events_live = event.objects.filter(active=True).filter(event_status='Live').order_by('-event_datetime') 
+
+    return JsonResponse({
+        'past': EventSerializer(events_past, many=True).data,
+        'live': EventSerializer(events_live, many=True).data,
+        'upcoming': EventSerializer(events_up, many=True).data
+    }, safe=False)
