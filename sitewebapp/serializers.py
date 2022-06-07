@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from .models import Members, blog as Blogs, Comments, event as Events, Alumni, access_tokens
-# , Candidates, auditionAnswers, auditionQuestions, auditionRounds
+from .models import Members, blog as Blogs, Comments, event as Events, Alumni
+# access_tokens, Candidates, auditionAnswers, auditionQuestions, auditionRounds
 
 
 class MemberSerializer(serializers.HyperlinkedModelSerializer):
@@ -27,8 +27,3 @@ class AlumniSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Alumni
         fields = ['firstname', 'lastname', 'email', 'batch', 'sno', 'propic', 'facebook_url', 'instagram_url', 'linkedin_url']
-
-class AccessTokensSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = access_tokens
-        fields = ['name', 'value']
