@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect, JsonResponse
 from .models import *
@@ -231,14 +232,17 @@ def api_member_list(request):
 
 @api_view(['GET'])
 def api_event_list(request):
-    events_up = event.objects.filter(active=True).filter(event_status='Upcoming').order_by('-event_datetime')
-    events_past = event.objects.filter(active=True).filter(event_status='Past').order_by('-event_datetime')
-    events_live = event.objects.filter(active=True).filter(event_status='Live').order_by('-event_datetime') 
+    events_all = event.objects.filter(active=True).order_by('-event_datetime')
+    events_upcoming = event.objects.filter(active=True,
+    event_starttime__gt=datetime.now(),
+    event_starttime__lt=datetime.now() + timedelta(days=15)
+    ).order_by('-event_datetime')
+    events_live = event.objects.filter(active=True, event_starttime__lt=datetime.now(), event_endtime__gt=datetime.now()).order_by('-event_datetime') 
 
     return JsonResponse({
-        'past': EventSerializer(events_past, many=True).data,
+        'upcoming': EventSerializer(events_upcoming, many=True).data,
         'live': EventSerializer(events_live, many=True).data,
-        'upcoming': EventSerializer(events_up, many=True).data
+        'all': EventSerializer(events_all, many=True).data
     }, safe=False)
 
 @api_view(['GET'])
