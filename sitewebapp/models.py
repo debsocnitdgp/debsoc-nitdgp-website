@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.db import models
 
 # Create your models here.
@@ -10,12 +11,6 @@ YEAR = (
 MODE = (
     ('Online', 'Online'),
     ('Offline', 'Offline'),
-)
-
-STATUS = (
-    ('Upcoming', 'Upcoming'),
-    ('Past', 'Past'),
-    ('Live', 'Live'),
 )
 
 ASTAT = (
@@ -89,8 +84,10 @@ class event(models.Model):
         'Date of event : ', auto_now_add=False)
     event_mode = models.CharField(
         max_length=15, choices=MODE, default='Online')
-    event_status = models.CharField(
-        max_length=20, choices=STATUS, default='Past')
+    
+    event_starttime = models.DateTimeField("Start Date of the event: ", default=datetime.now())
+    event_endtime = models.DateTimeField("End date of the event: ", default=datetime.now())
+
     active = models.BooleanField(default=True,max_length=50000)
     text1 = models.CharField(blank=True, max_length= 20)
     url1 = models.CharField(blank=True,max_length=500)
