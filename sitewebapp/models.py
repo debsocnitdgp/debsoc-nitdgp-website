@@ -22,7 +22,7 @@ ASTAT = (
 QTYPE = (
     ('LONG', 'LONG'),
     ('SMALL', 'SMALL'),
-    ('MCQ','MCQ')
+    ('MCQ', 'MCQ')
 )
 
 
@@ -33,8 +33,9 @@ class Members(models.Model):
     email = models.EmailField(max_length=254)
     bio = models.TextField(default='', null=True, blank=True)
     year = models.CharField(max_length=10, choices=YEAR, default='Second')
-    post = models.CharField(max_length=100, null=True, blank=True, default='Senior Member')
-    sno = models.IntegerField(blank=True, null =True)
+    post = models.CharField(max_length=100, null=True,
+                            blank=True, default='Senior Member')
+    sno = models.IntegerField(blank=True, null=True)
     dp = models.ImageField(upload_to='memberDPs/', blank=True, null=True)
     facebook_url = models.URLField(max_length=300, null=True, blank=True)
     instagram_url = models.URLField(max_length=300, null=True, blank=True)
@@ -84,24 +85,26 @@ class event(models.Model):
         'Date of event : ', auto_now_add=False)
     event_mode = models.CharField(
         max_length=15, choices=MODE, default='Online')
-    
-    event_starttime = models.DateTimeField("Start Date of the event: ", default=datetime.now())
-    event_endtime = models.DateTimeField("End date of the event: ", default=datetime.now())
 
-    active = models.BooleanField(default=True,max_length=50000)
-    text1 = models.CharField(blank=True, max_length= 20)
-    url1 = models.CharField(blank=True,max_length=500)
-    text2 = models.CharField(blank=True, max_length= 20)
-    url2 = models.CharField(blank=True,max_length=500)
-    text3 = models.CharField(blank=True, max_length= 20)
-    url3 = models.CharField(blank=True,max_length=500)
+    event_starttime = models.DateTimeField(
+        "Start Date of the event: ", default=datetime.now())
+    event_endtime = models.DateTimeField(
+        "End date of the event: ", default=datetime.now())
 
+    active = models.BooleanField(default=True, max_length=50000)
+    text1 = models.CharField(blank=True, max_length=20)
+    url1 = models.CharField(blank=True, max_length=500)
+    text2 = models.CharField(blank=True, max_length=20)
+    url2 = models.CharField(blank=True, max_length=500)
+    text3 = models.CharField(blank=True, max_length=20)
+    url3 = models.CharField(blank=True, max_length=500)
 
     class Meta:
         ordering = ['-event_datetime']
 
     def __str__(self):
         return self.event_name
+
 
 class Candidates(models.Model):
     name = models.CharField(max_length=255)
@@ -115,21 +118,26 @@ class Candidates(models.Model):
     def __str__(self):
         return "{} : status {}".format(self.name, self.status)
 
+
 class auditionRounds(models.Model):
     roundno = models.IntegerField(default=1)
     round_status = models.BooleanField(default=False)
     #candidate = models.ForeignKey(Candidates, on_delete=models.CASCADE, related_name='candidates', blank=True, null=True)
-    candidate = models.ManyToManyField(Candidates, related_name='candidates', blank=True, null=True)
+    candidate = models.ManyToManyField(
+        Candidates, related_name='candidates', blank=True, null=True)
 
     def __str__(self):
         return "Round: {}".format(self.roundno)
+
 
 class auditionQuestions(models.Model):
     roundno = models.IntegerField(default=1)
     serialno = models.IntegerField(default=1)
     question = models.CharField(max_length=5000)
-    round = models.ForeignKey(auditionRounds, on_delete=models.CASCADE, related_name='round')
-    qtype = models.CharField(max_length=15, choices=QTYPE, default='LONG', null=True, blank=True)
+    round = models.ForeignKey(
+        auditionRounds, on_delete=models.CASCADE, related_name='round')
+    qtype = models.CharField(max_length=15, choices=QTYPE,
+                             default='LONG', null=True, blank=True)
     op1 = models.CharField(max_length=5000, null=True, blank=True)
     op2 = models.CharField(max_length=5000, null=True, blank=True)
     op3 = models.CharField(max_length=5000, null=True, blank=True)
@@ -142,32 +150,32 @@ class auditionQuestions(models.Model):
     def __str__(self):
         return "Round {}, qno {} : {}".format(self.roundno, self.serialno, self.question)
 
+
 class auditionAnswers(models.Model):
     roundno = models.IntegerField(default=1)
-    q = models.ForeignKey(auditionQuestions, on_delete=models.CASCADE, related_name='problem')
+    q = models.ForeignKey(
+        auditionQuestions, on_delete=models.CASCADE, related_name='problem')
     ans = models.CharField(max_length=800)
-    ansby = models.ForeignKey(Candidates, on_delete=models.CASCADE, related_name='candidate')
+    ansby = models.ForeignKey(
+        Candidates, on_delete=models.CASCADE, related_name='candidate')
     anstime = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return "Round {} q: {}, answered by {}".format(self.q.roundno , self.q.serialno, self.ansby.name)
-
-
-
+        return "Round {} q: {}, answered by {}".format(self.q.roundno, self.q.serialno, self.ansby.name)
 
 
 class Alumni(models.Model):
     firstname = models.CharField(max_length=255)
     lastname = models.CharField(max_length=255)
     email = models.EmailField(max_length=254)
-    batch = models.CharField(max_length=10,default='2017')
-    sno = models.IntegerField(blank=True, null =True)
-    propic= models.URLField(max_length=500,blank=True,null=True)
+    batch = models.CharField(max_length=10, default='2017')
+    sno = models.IntegerField(blank=True, null=True)
+    propic = models.URLField(max_length=500, blank=True, null=True)
     facebook_url = models.URLField(max_length=300, null=True, blank=True)
     instagram_url = models.URLField(max_length=300, null=True, blank=True)
     linkedin_url = models.URLField(max_length=300, null=True, blank=True)
-    
+
 
 class access_tokens(models.Model):
-    name= models.CharField(default='token',max_length=20)
-    value= models.CharField(max_length=50)
+    name = models.CharField(default='token', max_length=20)
+    value = models.CharField(max_length=50)

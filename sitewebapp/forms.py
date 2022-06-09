@@ -1,11 +1,12 @@
 from django.forms import ModelForm
-from .models import Alumni, Comments, Members,blog
+from .models import Alumni, Comments, Members, blog
 
 
 class CommentForm(ModelForm):
     class Meta:
         model = Comments
-        fields = ['comment',]
+        fields = ['comment', ]
+
 
 class MemberAddForm(ModelForm):
     class Meta:
@@ -15,11 +16,11 @@ class MemberAddForm(ModelForm):
 
 class blogcform(ModelForm):
     class Meta:
-        model=blog
-        fields=['title','blog_text','image_url','author']
+        model = blog
+        fields = ['title', 'blog_text', 'image_url', 'author']
 
 
 class alumniform(ModelForm):
     class Meta:
-        model=Alumni
-        fields="__all__"
+        model = Alumni
+        fields = "__all__"
