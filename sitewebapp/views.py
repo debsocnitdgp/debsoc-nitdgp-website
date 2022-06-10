@@ -235,8 +235,8 @@ def api_member_list(request):
     List all code snippets, or create a new snippet.
     """
     members4 = Members.objects.filter(year="Fourth").order_by('sno')
-    members3 = Members.objects.filter(year="Third").order_by('post')
-    members2 = Members.objects.filter(year="Second").order_by('post')
+    members3 = Members.objects.filter(year="Third").order_by('firstname')
+    members2 = Members.objects.filter(year="Second").order_by('firstname')
     return JsonResponse({
         "2": MemberSerializer(members2, many=True).data,
         "3": MemberSerializer(members3, many=True).data,
