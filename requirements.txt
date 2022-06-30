@@ -2,7 +2,7 @@ Django==2.2.15
 asgiref==3.2.10 
 pytz==2020.1 
 sqlparse==0.3.1
-Pillow==7.2.0
+Pillow
 gunicorn==20.0.4
 dj-database-url==0.5.0  
 whitenoise==5.1.0
@@ -18,3 +18,4 @@ python-decouple==3.3
 django-allauth==0.44.0
 django-nested-inline==0.4.2
 djangorestframework
+razorpay
