@@ -19,3 +19,4 @@ django-allauth==0.44.0
 django-nested-inline==0.4.2
 djangorestframework
 razorpay
+psycopg2-binary
