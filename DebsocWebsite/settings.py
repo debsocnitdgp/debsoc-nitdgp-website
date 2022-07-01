@@ -188,9 +188,9 @@ ACCOUNT_LOGOUT_ON_GET=True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 
-STATIC_URL = '/sitewebapp/static/'
+STATIC_URL = 'sitewebapp/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, '/sitewebapp/static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'sitewebapp/static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
