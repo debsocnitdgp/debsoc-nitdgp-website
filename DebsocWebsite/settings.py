@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'hehe_lol_no'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("ENVIRONMENT") != "production"
+DEBUG = True
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1','debsocnitd.team', 'debsocnitdgp.in', 'www.debsocnitdgp.in', '*.debsocnitdgp.in', 'debsoc-website.herokuapp.com']
@@ -109,7 +109,7 @@ DATABASES = {
 }
 
 
-if os.environ.get("ENVIRONMENT") == "production":
+if os.environ.get("ENV") == "production":
     import dj_database_url
     db_from_env = dj_database_url.config(conn_max_age=600)
     DATABASES['default'].update(db_from_env)
@@ -188,9 +188,9 @@ ACCOUNT_LOGOUT_ON_GET=True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 
-STATIC_URL = 'sitewebapp/static/'
+STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'sitewebapp/static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
