@@ -30,7 +30,7 @@ class Members(models.Model):
     username = models.CharField(max_length=255)
     firstname = models.CharField(max_length=255)
     lastname = models.CharField(max_length=255)
-    email = models.EmailField(max_length=254)
+    email = models.EmailField(max_length=254, null=True, blank=True)
     bio = models.TextField(default='', null=True, blank=True)
     year = models.CharField(max_length=10, choices=YEAR, default='Second')
     post = models.CharField(max_length=100, null=True,
@@ -167,10 +167,10 @@ class auditionAnswers(models.Model):
 class Alumni(models.Model):
     firstname = models.CharField(max_length=255)
     lastname = models.CharField(max_length=255)
-    email = models.EmailField(max_length=254)
+    email = models.EmailField(max_length=254, null=True, blank=True)
     batch = models.CharField(max_length=10, default='2017')
     sno = models.IntegerField(blank=True, null=True)
-    propic = models.URLField(max_length=500, blank=True, null=True)
+    dp = models.ImageField(upload_to='alumniDPs/', blank=True, null=True)
     facebook_url = models.URLField(max_length=300, null=True, blank=True)
     instagram_url = models.URLField(max_length=300, null=True, blank=True)
     linkedin_url = models.URLField(max_length=300, null=True, blank=True)
