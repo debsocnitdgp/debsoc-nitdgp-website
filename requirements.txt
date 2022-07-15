@@ -21,3 +21,4 @@ djangorestframework
 razorpay
 psycopg2-binary==2.8.6
 django_heroku
+django-cors-headers==3.0.0

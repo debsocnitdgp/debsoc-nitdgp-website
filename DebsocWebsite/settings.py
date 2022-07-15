@@ -24,7 +24,7 @@ SECRET_KEY = 'hehe_lol_no'
 DEBUG = True
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','debsocnitd.team', 'debsocnitdgp.in', 'www.debsocnitdgp.in', '*.debsocnitdgp.in', 'debsoc-website.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -52,11 +52,13 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth.socialaccount.providers.google',
 
-    'rest_framework'
+    'rest_framework',
+    'corsheaders'
 
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -67,6 +69,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'DebsocWebsite.urls'
 
